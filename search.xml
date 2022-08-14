@@ -354,11 +354,11 @@
 <td>删除光标后面的单词或是中文句</td>
 </tr>
 <tr>
-<td>Ctrl + BackSpace</td>
+<td>Ctrl + 退格</td>
 <td>删除光标前面的单词或是中文句</td>
 </tr>
 <tr>
-<td>Ctrl + 1,2,3…9</td>
+<td>Ctrl + num</td>
 <td>定位到对应数值的书签位置</td>
 </tr>
 <tr>
@@ -894,6 +894,55 @@
         <tag>tools</tag>
         <tag>eclipse</tag>
         <tag>idea</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MySQL自动生成word表格</title>
+    <url>/2022/08/14/MySQL%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90word%E8%A1%A8%E6%A0%BC/</url>
+    <content><![CDATA[<p><strong>有时需要用word表格展示数据库表设计，这里介绍一款用于自动生成world表格文件的小工具。</strong></p>
+<span id="more"></span>
+
+<ul>
+<li><p>工具截图</p>
+<p><img data-src="https://orangestart.oss-cn-chengdu.aliyuncs.com/myblog/202208142224578.png"></p>
+</li>
+</ul>
+<p><strong>使用方法</strong></p>
+<ul>
+<li><p>使用WinRAR打开jar文件</p>
+<p><img data-src="https://orangestart.oss-cn-chengdu.aliyuncs.com/myblog/202208142224318.png"></p>
+</li>
+<li><p>修改配置文件</p>
+<p><img data-src="https://orangestart.oss-cn-chengdu.aliyuncs.com/myblog/202208142225413.png"></p>
+</li>
+<li><p>运行工具</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">Java <span class="literal">-jar</span> mysql_to_word.jar</span><br></pre></td></tr></table></figure>
+
+<p><img data-src="https://orangestart.oss-cn-chengdu.aliyuncs.com/myblog/202208142225814.png"></p>
+</li>
+<li><p>生成word文件</p>
+<ul>
+<li>使用浏览器访问</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">localhost:8888/test/demo</span><br></pre></td></tr></table></figure>
+
+<p><img data-src="https://orangestart.oss-cn-chengdu.aliyuncs.com/myblog/202208142225997.png"></p>
+<ul>
+<li><p>查看生成文件</p>
+<p><img data-src="https://orangestart.oss-cn-chengdu.aliyuncs.com/myblog/202208142225765.png"></p>
+<p><img data-src="https://orangestart.oss-cn-chengdu.aliyuncs.com/myblog/202208142225691.png"></p>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>工具下载地址：</strong></p>
+<p>​		<a href="https://orangestart.lanzouj.com/ixgdS047g5oh">https://orangestart.lanzouj.com/ixgdS047g5oh</a><br>​				密码:2tgj</p>
+]]></content>
+      <categories>
+        <category>tools</category>
+      </categories>
+      <tags>
+        <tag>mysql</tag>
       </tags>
   </entry>
 </search>
