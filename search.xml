@@ -945,4 +945,121 @@
         <tag>mysql</tag>
       </tags>
   </entry>
+  <entry>
+    <title>markdown语法入门</title>
+    <url>/2022/08/09/markdown%E8%AF%AD%E6%B3%95%E5%85%A5%E9%97%A8/</url>
+    <content><![CDATA[<p>在日常工作和互联网写作中，Markdown几乎随处可见，并且扮演着越来越重要的角色。不管你是不是程序员，只要关乎写作，都离不开Markdown。知乎、简书、CSDN、GitHub、WordPress、印象笔记、有道笔记等都支持Markdown，Markdown俨然已成为最流行的“写作语言” 。</p>
+<!-- mroe -->
+
+<blockquote>
+<p>其实Markdown最难的地方并不是语法，而是开始使用。就像跑步最难的并不是跑步本身，而跨出家门的那一刻。只要勇敢地跨出第一步，并且坚持下去，一切都会变得简单，水到渠成。每个人都能学会Markdown，只要你开始用起来。本篇主要介绍Markdown的基础语法和扩展语法GFM。</p>
+</blockquote>
+<h3 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h3><h4 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h4><ul>
+<li><p>标题</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section"># + space + title</span></span><br></pre></td></tr></table></figure>
+
+<p>说明：</p>
+<ul>
+<li>在行首插入<code>#</code>可标记出标题。</li>
+<li><code>#</code>的个数表示标题的等级。</li>
+<li>需要在<code>#</code>后加一个空格。</li>
+<li>markdown中最多只至前六级标题。</li>
+</ul>
+</li>
+<li><p>粗体和斜体</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">** + 加粗文字 + **</span><br><span class="line">* + 斜体文字 + *</span><br></pre></td></tr></table></figure>
+
+<p>说明：</p>
+<ul>
+<li><code>*</code>与文字之间不要有空格。</li>
+</ul>
+</li>
+</ul>
+<h4 id="段落与换行"><a href="#段落与换行" class="headerlink" title="段落与换行"></a>段落与换行</h4><ul>
+<li><p>列表</p>
+<p> 在Markdown中支持使用有序列表和无序列表。</p>
+<ul>
+<li><p>有序列表</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">数字序号 + 英文句号 + 空格 + 列表内容</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>无序列表</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">减号 + 空格 + 列表内容</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>嵌套列表		</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">第一层列表</span><br><span class="line">Tab + 第二层列表</span><br><span class="line">Tab + Tab + 第三层列表</span><br></pre></td></tr></table></figure>
+
+<p><strong>说明：</strong>列表中可以嵌套列表，有序列表和无序列表也可以互相嵌套。</p>
+</li>
+</ul>
+</li>
+<li><p>分割线</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<p>说明：行内不能有其它字符，可以在标记符中间加上空格。</p>
+</li>
+</ul>
+<h4 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h4><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">图片代替文字</span>](<span class="link">图片地址</span>)</span><br></pre></td></tr></table></figure>
+
+<p>说明：1. 图片代替文字在图片无法正常显示时才会比较有用，正常情况下可以为。</p>
+<p>​			2. 图片地址可以是本地图片的路径也可以是网络图片的地址。</p>
+<p>​			3. 本地图片支持相对路劲和绝对路径两种方式。</p>
+<h4 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h4><ul>
+<li><p>文字链接</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">[<span class="string">链接文字</span>](<span class="link">链接地址</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>引用链接</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">[<span class="string">链接文字</span>][<span class="symbol">链接标记</span>]</span><br><span class="line">[<span class="symbol">链接标记</span>]: <span class="link">链接地址</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>网络链接</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">URL或邮箱地址</span>&gt;</span></span> </span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="行内代码-amp-代码块"><a href="#行内代码-amp-代码块" class="headerlink" title="行内代码&amp;代码块"></a>行内代码&amp;代码块</h4><ul>
+<li><p>行内代码</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="code">`代码`</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>代码块</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">Tab或4个空格</span><br><span class="line"><span class="code">	代码</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h4><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="quote">&gt; 引用内容</span></span><br></pre></td></tr></table></figure>
+
+<p>说明：1. 多行引用也可以在每一行开头都插入&gt;。</p>
+<p>​			2. 在引用中可以嵌套引用。</p>
+<p>​			3. 在引用中可以使用其它的markdown语法。</p>
+<h4 id="转义"><a href="#转义" class="headerlink" title="转义"></a>转义</h4><blockquote>
+<p>当我们想在markdown文件中插入一些符号标记，但又不想这些符号被渲染时，可以使用**\**进行转义。</p>
+</blockquote>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">\特殊符号</span><br></pre></td></tr></table></figure>
+
+<h3 id="扩展语法GFM"><a href="#扩展语法GFM" class="headerlink" title="扩展语法GFM"></a>扩展语法GFM</h3><blockquote>
+<p>在众多Markdown扩展语法中，GitHub Flavored Markdown（简称GFM）无疑是目前最流行的，它提供了包括表格、任务列表、删除线、围栏代码、Emoji等在内的标记语法。</p>
+</blockquote>
+<h4 id="删除线"><a href="#删除线" class="headerlink" title="删除线"></a>删除线</h4><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">\~~被删除的文字\~~ (\省略)</span><br></pre></td></tr></table></figure>
+
+<h4 id="表情符号-smile"><a href="#表情符号-smile" class="headerlink" title="表情符号 :smile:"></a>表情符号 :smile:</h4><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">:表情代码：</span><br><span class="line">example:</span><br><span class="line">:smile:</span><br></pre></td></tr></table></figure>
+
+<p>说明：更多的表情符号请参考<a href="http://www.webpagefx.com/tools/emojicheat-sheet/">http://www.webpagefx.com/tools/emojicheat-sheet/</a>。</p>
+<h4 id="自动链接"><a href="#自动链接" class="headerlink" title="自动链接"></a>自动链接</h4><p>在标准语法中，由&lt;&gt;包裹的URL地址被自动识别并解析为超链接，使用GFM扩展语法则可以省略&lt;&gt;。</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">www.google.com</span>&gt;</span></span> #标准语法</span><br><span class="line">www.google.com	 #GFM扩展语法</span><br></pre></td></tr></table></figure>
+
+<h4 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h4><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">| 表头一 | 表头二 | 表头三 |</span><br><span class="line">| ---- | ---- | ---- |   (----：个数没有规定，使用4个也可以。)</span><br><span class="line">| 内容一 | 内容二 | 内容三 |</span><br></pre></td></tr></table></figure>
+
+<p>说明：对齐方式以第二行代码规定，左对齐（默认）：<code>:----</code>，右对齐：<code>----:</code>，居中对齐：<code>:----:</code>，最后块级元素（代码区块、引用区块）不能插入表格中。</p>
+<h4 id="任务列表"><a href="#任务列表" class="headerlink" title="任务列表"></a>任务列表</h4><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="bullet">-</span> [] 未勾选</span><br><span class="line"><span class="bullet">-</span> [x] 已勾选</span><br></pre></td></tr></table></figure>
+
+<h4 id="围栏代码块"><a href="#围栏代码块" class="headerlink" title="围栏代码块"></a>围栏代码块</h4><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="code">```java</span></span><br><span class="line"><span class="code">public void main(String[] args)&#123;</span></span><br><span class="line"><span class="code">	System.out.println(&quot;hello, world&quot;);</span></span><br><span class="line"><span class="code">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="锚点"><a href="#锚点" class="headerlink" title="锚点"></a>锚点</h4><blockquote>
+<p>锚点，也称为书签，用来标记文档的特定位置，使用锚点可以跳转到当前文档或其他文档中指定的标记位置。</p>
+</blockquote>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">需要跳转的地方：<span class="language-xml"><span class="tag">&lt;<span class="name">a</span> <span class="attr">name</span>=<span class="string">&quot;divtop&quot;</span>&gt;</span></span> 我是目标位置 <span class="language-xml"><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span></span><br><span class="line">定义锚记：[<span class="string">跳转指定位置</span>](<span class="link">#divtop</span>)</span><br></pre></td></tr></table></figure>
+
+<p>说明：锚点名建议使用字母和数字，且区分英文大小写，在锚点名中不能含有空格、特殊符号。</p>
+]]></content>
+      <categories>
+        <category>markdown</category>
+      </categories>
+      <tags>
+        <tag>markdown</tag>
+      </tags>
+  </entry>
 </search>
