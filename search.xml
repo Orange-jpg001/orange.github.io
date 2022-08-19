@@ -949,7 +949,7 @@
     <title>markdown语法入门</title>
     <url>/2022/08/09/markdown%E8%AF%AD%E6%B3%95%E5%85%A5%E9%97%A8/</url>
     <content><![CDATA[<p>在日常工作和互联网写作中，Markdown几乎随处可见，并且扮演着越来越重要的角色。不管你是不是程序员，只要关乎写作，都离不开Markdown。知乎、简书、CSDN、GitHub、WordPress、印象笔记、有道笔记等都支持Markdown，Markdown俨然已成为最流行的“写作语言” 。</p>
-<!-- mroe -->
+<span id="more"></span>
 
 <blockquote>
 <p>其实Markdown最难的地方并不是语法，而是开始使用。就像跑步最难的并不是跑步本身，而跨出家门的那一刻。只要勇敢地跨出第一步，并且坚持下去，一切都会变得简单，水到渠成。每个人都能学会Markdown，只要你开始用起来。本篇主要介绍Markdown的基础语法和扩展语法GFM。</p>
@@ -1037,7 +1037,7 @@
 
 <h4 id="表情符号-smile"><a href="#表情符号-smile" class="headerlink" title="表情符号 :smile:"></a>表情符号 :smile:</h4><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">:表情代码：</span><br><span class="line">example:</span><br><span class="line">:smile:</span><br></pre></td></tr></table></figure>
 
-<p>说明：更多的表情符号请参考<a href="http://www.webpagefx.com/tools/emojicheat-sheet/">http://www.webpagefx.com/tools/emojicheat-sheet/</a>。</p>
+<p>说明：更多的表情符号请参考<a href="http://www.webpagefx.com/tools/emoji-cheat-sheet/">http://www.webpagefx.com/tools/emoji-cheat-sheet/</a>。</p>
 <h4 id="自动链接"><a href="#自动链接" class="headerlink" title="自动链接"></a>自动链接</h4><p>在标准语法中，由&lt;&gt;包裹的URL地址被自动识别并解析为超链接，使用GFM扩展语法则可以省略&lt;&gt;。</p>
 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">www.google.com</span>&gt;</span></span> #标准语法</span><br><span class="line">www.google.com	 #GFM扩展语法</span><br></pre></td></tr></table></figure>
 
