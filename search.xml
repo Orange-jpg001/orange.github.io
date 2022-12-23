@@ -1,247 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>MySQL自动生成word表格</title>
-    <url>/2022/08/14/MySQL%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90word%E8%A1%A8%E6%A0%BC/</url>
-    <content><![CDATA[<p><strong>有时需要用word表格展示数据库表设计，这里介绍一款用于自动生成world表格文件的小工具。</strong></p>
-<span id="more"></span>
-
-<ul>
-<li><p>工具截图</p>
-<p><img data-src="https://orangestart.oss-cn-chengdu.aliyuncs.com/myblog/202208142224578.png"></p>
-</li>
-</ul>
-<p><strong>使用方法</strong></p>
-<ul>
-<li><p>使用WinRAR打开jar文件</p>
-<p><img data-src="https://orangestart.oss-cn-chengdu.aliyuncs.com/myblog/202208142224318.png"></p>
-</li>
-<li><p>修改配置文件</p>
-<p><img data-src="https://orangestart.oss-cn-chengdu.aliyuncs.com/myblog/202208142225413.png"></p>
-</li>
-<li><p>运行工具</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">Java <span class="literal">-jar</span> mysql_to_word.jar</span><br></pre></td></tr></table></figure>
-
-<p><img data-src="https://orangestart.oss-cn-chengdu.aliyuncs.com/myblog/202208142225814.png"></p>
-</li>
-<li><p>生成word文件</p>
-<ul>
-<li>使用浏览器访问</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">localhost:8888/test/demo</span><br></pre></td></tr></table></figure>
-
-<p><img data-src="https://orangestart.oss-cn-chengdu.aliyuncs.com/myblog/202208142225997.png"></p>
-<ul>
-<li><p>查看生成文件</p>
-<p><img data-src="https://orangestart.oss-cn-chengdu.aliyuncs.com/myblog/202208142225765.png"></p>
-<p><img data-src="https://orangestart.oss-cn-chengdu.aliyuncs.com/myblog/202208142225691.png"></p>
-</li>
-</ul>
-</li>
-</ul>
-<p><strong>工具下载地址：</strong></p>
-<p>​		<a href="https://orangestart.lanzouj.com/ixgdS047g5oh">https://orangestart.lanzouj.com/ixgdS047g5oh</a><br>​				密码:2tgj</p>
-]]></content>
-      <categories>
-        <category>tools</category>
-      </categories>
-      <tags>
-        <tag>mysql</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Markdown语法入门</title>
-    <url>/2022/08/19/Markdown%E8%AF%AD%E6%B3%95%E5%85%A5%E9%97%A8/</url>
-    <content><![CDATA[<p>在日常工作和互联网写作中，Markdown几乎随处可见，并且扮演着越来越重要的角色。不管你是不是程序员，只要关乎写作，都离不开Markdown。知乎、简书、CSDN、GitHub、WordPress、印象笔记、有道笔记等都支持Markdown，Markdown俨然已成为最流行的“写作语言” 。</p>
-<span id="more"></span>
-
-<p>本篇主要介绍Markdown的基础语法和扩展语法GFM。</p>
-<h3 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h3><h4 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h4><ul>
-<li><p>标题</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section"># + space + title</span></span><br></pre></td></tr></table></figure>
-
-<p>说明：</p>
-<ul>
-<li>在行首插入<code>#</code>可标记出标题。</li>
-<li><code>#</code>的个数表示标题的等级。</li>
-<li>需要在<code>#</code>后加一个空格。</li>
-<li>markdown中最多只至前六级标题。</li>
-</ul>
-</li>
-<li><p>粗体和斜体</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">** + 加粗文字 + **</span><br><span class="line">* + 斜体文字 + *</span><br></pre></td></tr></table></figure>
-
-<p>说明：</p>
-<ul>
-<li><code>*</code>与文字之间不要有空格。</li>
-</ul>
-</li>
-</ul>
-<h4 id="段落与换行"><a href="#段落与换行" class="headerlink" title="段落与换行"></a>段落与换行</h4><ul>
-<li><p>列表</p>
-<p> 在Markdown中支持使用有序列表和无序列表。</p>
-<ul>
-<li><p>有序列表</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">数字序号 + 英文句号 + 空格 + 列表内容</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>无序列表</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">减号 + 空格 + 列表内容</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>嵌套列表		</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">第一层列表</span><br><span class="line">Tab + 第二层列表</span><br><span class="line">Tab + Tab + 第三层列表</span><br></pre></td></tr></table></figure>
-
-<p><strong>说明：</strong>列表中可以嵌套列表，有序列表和无序列表也可以互相嵌套。</p>
-</li>
-</ul>
-</li>
-<li><p>分割线</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br></pre></td></tr></table></figure>
-
-<p>说明：行内不能有其它字符，可以在标记符中间加上空格。</p>
-</li>
-</ul>
-<h4 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h4><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">图片代替文字</span>](<span class="link">图片地址</span>)</span><br></pre></td></tr></table></figure>
-
-<p>说明：1. 图片代替文字在图片无法正常显示时才会比较有用，正常情况下可以为。</p>
-<p>​			2. 图片地址可以是本地图片的路径也可以是网络图片的地址。</p>
-<p>​			3. 本地图片支持相对路劲和绝对路径两种方式。</p>
-<h4 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h4><ul>
-<li><p>文字链接</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">[<span class="string">链接文字</span>](<span class="link">链接地址</span>)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>引用链接</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">[<span class="string">链接文字</span>][<span class="symbol">链接标记</span>]</span><br><span class="line">[<span class="symbol">链接标记</span>]: <span class="link">链接地址</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>网络链接</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">URL或邮箱地址</span>&gt;</span></span> </span><br></pre></td></tr></table></figure></li>
-</ul>
-<h4 id="行内代码-amp-代码块"><a href="#行内代码-amp-代码块" class="headerlink" title="行内代码&amp;代码块"></a>行内代码&amp;代码块</h4><ul>
-<li><p>行内代码</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="code">`代码`</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>代码块</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">Tab或4个空格</span><br><span class="line"><span class="code">	代码</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-<h4 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h4><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="quote">&gt; 引用内容</span></span><br></pre></td></tr></table></figure>
-
-<p>说明：1. 多行引用也可以在每一行开头都插入&gt;。</p>
-<p>​			2. 在引用中可以嵌套引用。</p>
-<p>​			3. 在引用中可以使用其它的markdown语法。</p>
-<h4 id="转义"><a href="#转义" class="headerlink" title="转义"></a>转义</h4><blockquote>
-<p>当我们想在markdown文件中插入一些符号标记，但又不想这些符号被渲染时，可以使用**\**进行转义。</p>
-</blockquote>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">\特殊符号</span><br></pre></td></tr></table></figure>
-
-<h3 id="扩展语法GFM"><a href="#扩展语法GFM" class="headerlink" title="扩展语法GFM"></a>扩展语法GFM</h3><blockquote>
-<p>在众多Markdown扩展语法中，GitHub Flavored Markdown（简称GFM）无疑是目前最流行的，它提供了包括表格、任务列表、删除线、围栏代码、Emoji等在内的标记语法。</p>
-</blockquote>
-<h4 id="删除线"><a href="#删除线" class="headerlink" title="删除线"></a>删除线</h4><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">\~~被删除的文字\~~ (\省略)</span><br></pre></td></tr></table></figure>
-
-<h4 id="表情符号-smile"><a href="#表情符号-smile" class="headerlink" title="表情符号 :smile:"></a>表情符号 :smile:</h4><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">:表情代码：</span><br><span class="line">example:</span><br><span class="line">:smile:</span><br></pre></td></tr></table></figure>
-
-<p>说明：更多的表情符号请参考<a href="http://www.webpagefx.com/tools/emoji-cheat-sheet/">http://www.webpagefx.com/tools/emoji-cheat-sheet/</a>。</p>
-<h4 id="自动链接"><a href="#自动链接" class="headerlink" title="自动链接"></a>自动链接</h4><p>在标准语法中，由&lt;&gt;包裹的URL地址被自动识别并解析为超链接，使用GFM扩展语法则可以省略&lt;&gt;。</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">www.google.com</span>&gt;</span></span> #标准语法</span><br><span class="line">www.google.com	 #GFM扩展语法</span><br></pre></td></tr></table></figure>
-
-<h4 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h4><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">| 表头一 | 表头二 | 表头三 |</span><br><span class="line">| ---- | ---- | ---- |   (----：个数没有规定，使用4个也可以。)</span><br><span class="line">| 内容一 | 内容二 | 内容三 |</span><br></pre></td></tr></table></figure>
-
-<p>说明：对齐方式以第二行代码规定，左对齐（默认）：<code>:----</code>，右对齐：<code>----:</code>，居中对齐：<code>:----:</code>，最后块级元素（代码区块、引用区块）不能插入表格中。</p>
-<h4 id="任务列表"><a href="#任务列表" class="headerlink" title="任务列表"></a>任务列表</h4><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="bullet">-</span> [] 未勾选</span><br><span class="line"><span class="bullet">-</span> [x] 已勾选</span><br></pre></td></tr></table></figure>
-
-<h4 id="围栏代码块"><a href="#围栏代码块" class="headerlink" title="围栏代码块"></a>围栏代码块</h4><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="code">```java</span></span><br><span class="line"><span class="code">public void main(String[] args)&#123;</span></span><br><span class="line"><span class="code">	System.out.println(&quot;hello, world&quot;);</span></span><br><span class="line"><span class="code">&#125;</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="锚点"><a href="#锚点" class="headerlink" title="锚点"></a>锚点</h4><blockquote>
-<p>锚点，也称为书签，用来标记文档的特定位置，使用锚点可以跳转到当前文档或其他文档中指定的标记位置。</p>
-</blockquote>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">需要跳转的地方：<span class="language-xml"><span class="tag">&lt;<span class="name">a</span> <span class="attr">name</span>=<span class="string">&quot;divtop&quot;</span>&gt;</span></span> 我是目标位置 <span class="language-xml"><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span></span><br><span class="line">定义锚记：[<span class="string">跳转指定位置</span>](<span class="link">#divtop</span>)</span><br></pre></td></tr></table></figure>
-
-<p>说明：锚点名建议使用字母和数字，且区分英文大小写，在锚点名中不能含有空格、特殊符号。</p>
-<h3 id="Typora扩展语法"><a href="#Typora扩展语法" class="headerlink" title="Typora扩展语法"></a>Typora扩展语法</h3><blockquote>
-<p>Typora扩展了下划线、数学公式、目录、脚注、上标、下标以及图表操作等功能，并且支持很多HTML标签，使排版格式变得更加齐全。</p>
-</blockquote>
-<h4 id="编辑样式"><a href="#编辑样式" class="headerlink" title="编辑样式"></a>编辑样式</h4><ul>
-<li><p>下划线</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">u</span>&gt;</span></span>这段文字下面有下划线<span class="language-xml"><span class="tag">&lt;/<span class="name">u</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-
-<p>相关快捷键</p>
-<p>​		<kbd>Ctrl</kbd> + <kbd>U</kbd></p>
-</li>
-<li><p>内联数学公式（浏览器不支持）</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">$数学公式$</span><br></pre></td></tr></table></figure>
-
-<p>$f(x, y) &#x3D; \frac{x ^ 2}{y ^ 3}$</p>
-</li>
-<li><p>下标和上标</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">~下标内容~</span><br><span class="line">^上标内容^</span><br></pre></td></tr></table></figure>
-
-<p>语法说明：</p>
-<p>​		使用<code>~</code>把下标内容包裹起来。</p>
-<p>​		使用<code>^</code>把上标内容包裹起来。</p>
-</li>
-<li><p>高亮（浏览器不支持）</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">==高亮内容==</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>注释</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&lt;!--我是注释--&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>清除样式</p>
-<p>可以使用<kbd>Ctrl</kbd> + <kbd>\</kbd>快捷键清除样式。</p>
-</li>
-<li><p>键盘文本样式</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">kbd</span>&gt;</span></span>Ctrl<span class="language-xml"><span class="tag">&lt;/<span class="name">kbd</span>&gt;</span></span>+<span class="language-xml"><span class="tag">&lt;<span class="name">kbd</span>&gt;</span></span>F9<span class="language-xml"><span class="tag">&lt;/<span class="name">kbd</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-
-<p>效果：<kbd>Ctrl</kbd>+<kbd>F9</kbd></p>
-</li>
-</ul>
-<h4 id="编辑段落"><a href="#编辑段落" class="headerlink" title="编辑段落"></a>编辑段落</h4><ul>
-<li><p>数学公式块（浏览器不支持）</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">$$</span><br><span class="line">数学公式</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
-
-<p>官方示例<br>$$<br>\mathbf{v}_1 \times \mathbf{v}_2 &#x3D; \begin{vmatrix}</p>
-<p>\mathbf{i} &amp; \mathbf{j} &amp; \mathbf{k} \</p>
-<p>\frac{\partial X}{\partial u} &amp; \frac{\partial Y}{\partial n} &amp; 0 \</p>
-<p>\frac{\partial X}{\partial v} &amp; \frac{\partial Y}{\partial v} &amp; 0 \</p>
-<p>\end{vmatrix}<br>$$</p>
-</li>
-<li><p>目录</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">[TOC]</span><br></pre></td></tr></table></figure>
-
-<p>说明：</p>
-<p>​        TOC是Table of Contents的缩写，输入<code>[TOC]</code>后按下回车键就可以自动生成文章的目录。</p>
-</li>
-<li><p>脚注</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">我们可以这样引用一个脚注[^参考]</span><br><span class="line">[<span class="symbol">^参考</span>]:<span class="link">这段文字是对脚注的描述。</span></span><br></pre></td></tr></table></figure>
-
-<p>我们可以这样引用一个脚注<a href="%E8%BF%99%E6%AE%B5%E6%96%87%E5%AD%97%E6%98%AF%E5%AF%B9%E8%84%9A%E6%B3%A8%E7%9A%84%E6%8F%8F%E8%BF%B0%E3%80%82">^参考</a></p>
-</li>
-</ul>
-<h4 id="使用HTML标签"><a href="#使用HTML标签" class="headerlink" title="使用HTML标签"></a>使用HTML标签</h4><ul>
-<li><p>文字颜色和大小</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;color:green&quot;</span>&gt;</span></span>绿色<span class="language-xml"><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><span class="language-xml"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;color:red;font-size:18px&quot;</span>&gt;</span></span>红色<span class="language-xml"><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-
-<p><span style="color:green">绿色</span><span style="color:red;font-size:18px">红色</span></p>
-</li>
-<li><p>嵌入网页</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">height</span>=<span class="string">&#x27;265&#x27;</span> <span class="attr">scrolling</span>=<span class="string">&#x27;no&#x27;</span> <span class="attr">title</span>=<span class="string">&#x27;Fancy Animated SVG Menu&#x27;</span> <span class="attr">src</span>=<span class="string">&#x27;//codepen.io/jeangontijo/embed/OxVywj/?height=265&amp;theme-id=0&amp;default-tab=css,result&amp;embed-version=2&#x27;</span> <span class="attr">frameborder</span>=<span class="string">&#x27;no&#x27;</span> <span class="attr">allowtransparency</span>=<span class="string">&#x27;true&#x27;</span> <span class="attr">allowfullscreen</span>=<span class="string">&#x27;true&#x27;</span> <span class="attr">style</span>=<span class="string">&#x27;width: 100%;&#x27;</span>&gt;</span></span>See the Pen <span class="language-xml"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&#x27;https://codepen.io/jeangontijo/pen/OxVywj/&#x27;</span>&gt;</span></span>Fancy Animated SVG Menu<span class="language-xml"><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span> by Jean Gontijo (<span class="language-xml"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&#x27;https://codepen.io/jeangontijo&#x27;</span>&gt;</span></span>@jeangontijo<span class="language-xml"><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span>) on <span class="language-xml"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&#x27;https://codepen.io&#x27;</span>&gt;</span></span>CodePen<span class="language-xml"><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span>.</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span></span><br></pre></td></tr></table></figure></li>
-</ul>
-<iframe height='265' scrolling='no' title='Fancy Animated SVG Menu' src='//codepen.io/jeangontijo/embed/OxVywj/?height=265&theme-id=0&default-tab=css,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/jeangontijo/pen/OxVywj/'>Fancy Animated SVG Menu</a> by Jean Gontijo (<a href='https://codepen.io/jeangontijo'>@jeangontijo</a>) on <a href='https://codepen.io'>CodePen</a>
-</iframe>
-
-
-<ul>
-<li><p>插入视频</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">video</span> <span class="attr">src</span>=<span class="string">&quot;./imgs/video.mov&quot;</span>/&gt;</span></span></span><br></pre></td></tr></table></figure></li>
-</ul>
-<p>​		更多标签见<a href="https://support.typora.io/HTML/">https://support.typora.io/HTML/</a></p>
-]]></content>
-      <categories>
-        <category>markdown</category>
-      </categories>
-      <tags>
-        <tag>markdown</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>常用IDE快捷键</title>
     <url>/2022/08/14/%E5%B8%B8%E7%94%A8IDE%E5%BF%AB%E6%8D%B7%E9%94%AE/</url>
     <content><![CDATA[<p>在日常开发往往需要用到各种IDE，那么熟练使用快捷键进行开发可谓是如虎添翼，本篇blog总结了eclipse、idea的快捷键。</p>
@@ -1118,59 +877,273 @@
       </tags>
   </entry>
   <entry>
-    <title>使用数组解决字符串相关问题</title>
-    <url>/2022/08/21/%E4%BD%BF%E7%94%A8%E6%95%B0%E7%BB%84%E8%A7%A3%E5%86%B3%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<p>今天在<a href="https://www.leetcode.cn/">leetcode</a>做字符串计数相关题目时，学习了使用辅助数组来解决问题。</p>
+    <title>Markdown语法入门</title>
+    <url>/2022/08/19/Markdown%E8%AF%AD%E6%B3%95%E5%85%A5%E9%97%A8/</url>
+    <content><![CDATA[<p>在日常工作和互联网写作中，Markdown几乎随处可见，并且扮演着越来越重要的角色。不管你是不是程序员，只要关乎写作，都离不开Markdown。知乎、简书、CSDN、GitHub、WordPress、印象笔记、有道笔记等都支持Markdown，Markdown俨然已成为最流行的“写作语言” 。</p>
 <span id="more"></span>
 
-<h4 id="适用情况"><a href="#适用情况" class="headerlink" title="适用情况"></a>适用情况</h4><p>字符串中仅存在小写&#x2F;大写字母，并且涉及字母计数的情景。</p>
-<h4 id="数组构造"><a href="#数组构造" class="headerlink" title="数组构造"></a>数组构造</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span>[] arr = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">26</span>];</span><br></pre></td></tr></table></figure>
+<p>本篇主要介绍Markdown的基础语法和扩展语法GFM。</p>
+<h3 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h3><h4 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h4><ul>
+<li><p>标题</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section"># + space + title</span></span><br></pre></td></tr></table></figure>
 
-<p><strong>说明：</strong>长度26代表各个字母，并以数组index下标依次表示a, b, c……x, y, z；数组中分别存放每个字母出现的个数，例如：arr[0] &#x3D;&#x3D; 1，表示字母<code>a</code>在字符串中出现了一次。</p>
-<h4 id="相关题目"><a href="#相关题目" class="headerlink" title="相关题目"></a>相关题目</h4><h5 id="题目一"><a href="#题目一" class="headerlink" title="题目一"></a>题目一</h5><ul>
-<li><p>标题：<a href="https://leetcode.cn/problems/first-unique-character-in-a-string/">387. First Unique Character in a String</a></p>
-</li>
-<li><p>描述：</p>
-<p>Given a string s, find the first non-repeating character in it and return its index. If it does not exist, return -1.</p>
-</li>
-<li><p>要求：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Example 1:</span><br><span class="line">    Input: s = &quot;leetcode&quot;</span><br><span class="line">    Output: 0</span><br><span class="line">    </span><br><span class="line">Example 2:</span><br><span class="line">    Input: s = &quot;loveleetcode&quot;</span><br><span class="line">    Output: 2</span><br><span class="line"></span><br><span class="line">Example 3:</span><br><span class="line">    Input: s = &quot;aabb&quot;</span><br><span class="line">    Output: -1</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>代码：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">firstUniqChar</span><span class="params">(String s)</span> &#123;</span><br><span class="line">        <span class="type">int</span>[] arr = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">26</span>];</span><br><span class="line">        <span class="type">char</span>[] schar = s.toCharArray();</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="type">char</span> temp : schar)&#123;</span><br><span class="line">            arr[temp - <span class="string">&#x27;a&#x27;</span>]++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; schar.length; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(arr[schar[i] - <span class="string">&#x27;a&#x27;</span>] == <span class="number">1</span>)&#123;</span><br><span class="line">                <span class="keyword">return</span> i;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<p>说明：</p>
+<ul>
+<li>在行首插入<code>#</code>可标记出标题。</li>
+<li><code>#</code>的个数表示标题的等级。</li>
+<li>需要在<code>#</code>后加一个空格。</li>
+<li>markdown中最多只至前六级标题。</li>
 </ul>
-<h5 id="题目二"><a href="#题目二" class="headerlink" title="题目二"></a>题目二</h5><ul>
-<li><p>标题：<a href="https://leetcode.cn/problems/ransom-note/">383. Ransom Note</a></p>
 </li>
-<li><p>描述：</p>
-<p>Given two strings ransomNote and magazine, return true if ransomNote can be constructed by using the letters from magazine and false otherwise.</p>
-<p>Each letter in magazine can only be used once in ransomNote.</p>
-</li>
-<li><p>要求：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Example 1:</span><br><span class="line">    Input: ransomNote = &quot;a&quot;, magazine = &quot;b&quot;</span><br><span class="line">    Output: false</span><br><span class="line">    </span><br><span class="line">Example 2:</span><br><span class="line">    Input: ransomNote = &quot;aa&quot;, magazine = &quot;ab&quot;</span><br><span class="line">    Output: false</span><br><span class="line"></span><br><span class="line">Example 3:</span><br><span class="line">    Input: ransomNote = &quot;aa&quot;, magazine = &quot;aab&quot;</span><br><span class="line">    Output: true</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>代码：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">canConstruct</span><span class="params">(String r, String m)</span> &#123;</span><br><span class="line">        <span class="type">int</span>[] arr = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">26</span>];</span><br><span class="line">        <span class="type">char</span>[] rchar = r.toCharArray();</span><br><span class="line">        <span class="type">char</span>[] mchar = m.toCharArray();</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="type">char</span> temp : mchar)&#123;</span><br><span class="line">            arr[temp - <span class="string">&#x27;a&#x27;</span>]++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">char</span> temp : rchar)&#123;</span><br><span class="line">            <span class="keyword">if</span>(arr[temp - <span class="string">&#x27;a&#x27;</span>] &gt; <span class="number">0</span>)&#123;</span><br><span class="line">                arr[temp - <span class="string">&#x27;a&#x27;</span>]--;</span><br><span class="line">            &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>粗体和斜体</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">** + 加粗文字 + **</span><br><span class="line">* + 斜体文字 + *</span><br></pre></td></tr></table></figure>
+
+<p>说明：</p>
+<ul>
+<li><code>*</code>与文字之间不要有空格。</li>
 </ul>
-<h5 id="题目三"><a href="#题目三" class="headerlink" title="题目三"></a>题目三</h5><ul>
-<li><p>标题：<a href="https://leetcode.cn/problems/valid-anagram/">242. Valid Anagram</a></p>
 </li>
-<li><p>描述：</p>
-<p>Given two strings s and t, return true if t is an anagram of s, and false otherwise.</p>
-<p>An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.</p>
-</li>
-<li><p>要求：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Example 1:</span><br><span class="line">    Input: s = &quot;anagram&quot;, t = &quot;nagaram&quot;</span><br><span class="line">    Output: true</span><br><span class="line">    </span><br><span class="line">Example 2:</span><br><span class="line">    Input: s = &quot;rat&quot;, t = &quot;car&quot;</span><br><span class="line">    Output: false</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>代码：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">isAnagram</span><span class="params">(String s, String t)</span> &#123;</span><br><span class="line">        <span class="type">int</span>[] arr = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">26</span>];</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="type">char</span> temp : s.toCharArray())&#123;</span><br><span class="line">            arr[temp - <span class="string">&#x27;a&#x27;</span>]++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">char</span> temp : t.toCharArray())&#123;</span><br><span class="line">            arr[temp - <span class="string">&#x27;a&#x27;</span>]--;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> temp : arr)&#123;</span><br><span class="line">            <span class="keyword">if</span>(temp != <span class="number">0</span>)&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 </ul>
+<h4 id="段落与换行"><a href="#段落与换行" class="headerlink" title="段落与换行"></a>段落与换行</h4><ul>
+<li><p>列表</p>
+<p> 在Markdown中支持使用有序列表和无序列表。</p>
+<ul>
+<li><p>有序列表</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">数字序号 + 英文句号 + 空格 + 列表内容</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>无序列表</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">减号 + 空格 + 列表内容</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>嵌套列表		</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">第一层列表</span><br><span class="line">Tab + 第二层列表</span><br><span class="line">Tab + Tab + 第三层列表</span><br></pre></td></tr></table></figure>
+
+<p><strong>说明：</strong>列表中可以嵌套列表，有序列表和无序列表也可以互相嵌套。</p>
+</li>
+</ul>
+</li>
+<li><p>分割线</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<p>说明：行内不能有其它字符，可以在标记符中间加上空格。</p>
+</li>
+</ul>
+<h4 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h4><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">图片代替文字</span>](<span class="link">图片地址</span>)</span><br></pre></td></tr></table></figure>
+
+<p>说明：1. 图片代替文字在图片无法正常显示时才会比较有用，正常情况下可以为。</p>
+<p>​			2. 图片地址可以是本地图片的路径也可以是网络图片的地址。</p>
+<p>​			3. 本地图片支持相对路劲和绝对路径两种方式。</p>
+<h4 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h4><ul>
+<li><p>文字链接</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">[<span class="string">链接文字</span>](<span class="link">链接地址</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>引用链接</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">[<span class="string">链接文字</span>][<span class="symbol">链接标记</span>]</span><br><span class="line">[<span class="symbol">链接标记</span>]: <span class="link">链接地址</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>网络链接</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">URL或邮箱地址</span>&gt;</span></span> </span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="行内代码-amp-代码块"><a href="#行内代码-amp-代码块" class="headerlink" title="行内代码&amp;代码块"></a>行内代码&amp;代码块</h4><ul>
+<li><p>行内代码</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="code">`代码`</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>代码块</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">Tab或4个空格</span><br><span class="line"><span class="code">	代码</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h4><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="quote">&gt; 引用内容</span></span><br></pre></td></tr></table></figure>
+
+<p>说明：1. 多行引用也可以在每一行开头都插入&gt;。</p>
+<p>​			2. 在引用中可以嵌套引用。</p>
+<p>​			3. 在引用中可以使用其它的markdown语法。</p>
+<h4 id="转义"><a href="#转义" class="headerlink" title="转义"></a>转义</h4><blockquote>
+<p>当我们想在markdown文件中插入一些符号标记，但又不想这些符号被渲染时，可以使用**\**进行转义。</p>
+</blockquote>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">\特殊符号</span><br></pre></td></tr></table></figure>
+
+<h3 id="扩展语法GFM"><a href="#扩展语法GFM" class="headerlink" title="扩展语法GFM"></a>扩展语法GFM</h3><blockquote>
+<p>在众多Markdown扩展语法中，GitHub Flavored Markdown（简称GFM）无疑是目前最流行的，它提供了包括表格、任务列表、删除线、围栏代码、Emoji等在内的标记语法。</p>
+</blockquote>
+<h4 id="删除线"><a href="#删除线" class="headerlink" title="删除线"></a>删除线</h4><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">\~~被删除的文字\~~ (\省略)</span><br></pre></td></tr></table></figure>
+
+<h4 id="表情符号-smile"><a href="#表情符号-smile" class="headerlink" title="表情符号 :smile:"></a>表情符号 :smile:</h4><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">:表情代码：</span><br><span class="line">example:</span><br><span class="line">:smile:</span><br></pre></td></tr></table></figure>
+
+<p>说明：更多的表情符号请参考<a href="http://www.webpagefx.com/tools/emoji-cheat-sheet/">http://www.webpagefx.com/tools/emoji-cheat-sheet/</a>。</p>
+<h4 id="自动链接"><a href="#自动链接" class="headerlink" title="自动链接"></a>自动链接</h4><p>在标准语法中，由&lt;&gt;包裹的URL地址被自动识别并解析为超链接，使用GFM扩展语法则可以省略&lt;&gt;。</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">www.google.com</span>&gt;</span></span> #标准语法</span><br><span class="line">www.google.com	 #GFM扩展语法</span><br></pre></td></tr></table></figure>
+
+<h4 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h4><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">| 表头一 | 表头二 | 表头三 |</span><br><span class="line">| ---- | ---- | ---- |   (----：个数没有规定，使用4个也可以。)</span><br><span class="line">| 内容一 | 内容二 | 内容三 |</span><br></pre></td></tr></table></figure>
+
+<p>说明：对齐方式以第二行代码规定，左对齐（默认）：<code>:----</code>，右对齐：<code>----:</code>，居中对齐：<code>:----:</code>，最后块级元素（代码区块、引用区块）不能插入表格中。</p>
+<h4 id="任务列表"><a href="#任务列表" class="headerlink" title="任务列表"></a>任务列表</h4><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="bullet">-</span> [] 未勾选</span><br><span class="line"><span class="bullet">-</span> [x] 已勾选</span><br></pre></td></tr></table></figure>
+
+<h4 id="围栏代码块"><a href="#围栏代码块" class="headerlink" title="围栏代码块"></a>围栏代码块</h4><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="code">```java</span></span><br><span class="line"><span class="code">public void main(String[] args)&#123;</span></span><br><span class="line"><span class="code">	System.out.println(&quot;hello, world&quot;);</span></span><br><span class="line"><span class="code">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="锚点"><a href="#锚点" class="headerlink" title="锚点"></a>锚点</h4><blockquote>
+<p>锚点，也称为书签，用来标记文档的特定位置，使用锚点可以跳转到当前文档或其他文档中指定的标记位置。</p>
+</blockquote>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">需要跳转的地方：<span class="language-xml"><span class="tag">&lt;<span class="name">a</span> <span class="attr">name</span>=<span class="string">&quot;divtop&quot;</span>&gt;</span></span> 我是目标位置 <span class="language-xml"><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span></span><br><span class="line">定义锚记：[<span class="string">跳转指定位置</span>](<span class="link">#divtop</span>)</span><br></pre></td></tr></table></figure>
+
+<p>说明：锚点名建议使用字母和数字，且区分英文大小写，在锚点名中不能含有空格、特殊符号。</p>
+<h3 id="Typora扩展语法"><a href="#Typora扩展语法" class="headerlink" title="Typora扩展语法"></a>Typora扩展语法</h3><blockquote>
+<p>Typora扩展了下划线、数学公式、目录、脚注、上标、下标以及图表操作等功能，并且支持很多HTML标签，使排版格式变得更加齐全。</p>
+</blockquote>
+<h4 id="编辑样式"><a href="#编辑样式" class="headerlink" title="编辑样式"></a>编辑样式</h4><ul>
+<li><p>下划线</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">u</span>&gt;</span></span>这段文字下面有下划线<span class="language-xml"><span class="tag">&lt;/<span class="name">u</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<p>相关快捷键</p>
+<p>​		<kbd>Ctrl</kbd> + <kbd>U</kbd></p>
+</li>
+<li><p>内联数学公式（浏览器不支持）</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">$数学公式$</span><br></pre></td></tr></table></figure>
+
+<p>$f(x, y) &#x3D; \frac{x ^ 2}{y ^ 3}$</p>
+</li>
+<li><p>下标和上标</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">~下标内容~</span><br><span class="line">^上标内容^</span><br></pre></td></tr></table></figure>
+
+<p>语法说明：</p>
+<p>​		使用<code>~</code>把下标内容包裹起来。</p>
+<p>​		使用<code>^</code>把上标内容包裹起来。</p>
+</li>
+<li><p>高亮（浏览器不支持）</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">==高亮内容==</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>注释</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&lt;!--我是注释--&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>清除样式</p>
+<p>可以使用<kbd>Ctrl</kbd> + <kbd>\</kbd>快捷键清除样式。</p>
+</li>
+<li><p>键盘文本样式</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">kbd</span>&gt;</span></span>Ctrl<span class="language-xml"><span class="tag">&lt;/<span class="name">kbd</span>&gt;</span></span>+<span class="language-xml"><span class="tag">&lt;<span class="name">kbd</span>&gt;</span></span>F9<span class="language-xml"><span class="tag">&lt;/<span class="name">kbd</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<p>效果：<kbd>Ctrl</kbd>+<kbd>F9</kbd></p>
+</li>
+</ul>
+<h4 id="编辑段落"><a href="#编辑段落" class="headerlink" title="编辑段落"></a>编辑段落</h4><ul>
+<li><p>数学公式块（浏览器不支持）</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">$$</span><br><span class="line">数学公式</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
+
+<p>官方示例<br>$$<br>\mathbf{v}_1 \times \mathbf{v}_2 &#x3D; \begin{vmatrix}</p>
+<p>\mathbf{i} &amp; \mathbf{j} &amp; \mathbf{k} \</p>
+<p>\frac{\partial X}{\partial u} &amp; \frac{\partial Y}{\partial n} &amp; 0 \</p>
+<p>\frac{\partial X}{\partial v} &amp; \frac{\partial Y}{\partial v} &amp; 0 \</p>
+<p>\end{vmatrix}<br>$$</p>
+</li>
+<li><p>目录</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">[TOC]</span><br></pre></td></tr></table></figure>
+
+<p>说明：</p>
+<p>​        TOC是Table of Contents的缩写，输入<code>[TOC]</code>后按下回车键就可以自动生成文章的目录。</p>
+</li>
+<li><p>脚注</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">我们可以这样引用一个脚注[^参考]</span><br><span class="line">[<span class="symbol">^参考</span>]:<span class="link">这段文字是对脚注的描述。</span></span><br></pre></td></tr></table></figure>
+
+<p>我们可以这样引用一个脚注<a href="%E8%BF%99%E6%AE%B5%E6%96%87%E5%AD%97%E6%98%AF%E5%AF%B9%E8%84%9A%E6%B3%A8%E7%9A%84%E6%8F%8F%E8%BF%B0%E3%80%82">^参考</a></p>
+</li>
+</ul>
+<h4 id="使用HTML标签"><a href="#使用HTML标签" class="headerlink" title="使用HTML标签"></a>使用HTML标签</h4><ul>
+<li><p>文字颜色和大小</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;color:green&quot;</span>&gt;</span></span>绿色<span class="language-xml"><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><span class="language-xml"><span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;color:red;font-size:18px&quot;</span>&gt;</span></span>红色<span class="language-xml"><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<p><span style="color:green">绿色</span><span style="color:red;font-size:18px">红色</span></p>
+</li>
+<li><p>嵌入网页</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">height</span>=<span class="string">&#x27;265&#x27;</span> <span class="attr">scrolling</span>=<span class="string">&#x27;no&#x27;</span> <span class="attr">title</span>=<span class="string">&#x27;Fancy Animated SVG Menu&#x27;</span> <span class="attr">src</span>=<span class="string">&#x27;//codepen.io/jeangontijo/embed/OxVywj/?height=265&amp;theme-id=0&amp;default-tab=css,result&amp;embed-version=2&#x27;</span> <span class="attr">frameborder</span>=<span class="string">&#x27;no&#x27;</span> <span class="attr">allowtransparency</span>=<span class="string">&#x27;true&#x27;</span> <span class="attr">allowfullscreen</span>=<span class="string">&#x27;true&#x27;</span> <span class="attr">style</span>=<span class="string">&#x27;width: 100%;&#x27;</span>&gt;</span></span>See the Pen <span class="language-xml"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&#x27;https://codepen.io/jeangontijo/pen/OxVywj/&#x27;</span>&gt;</span></span>Fancy Animated SVG Menu<span class="language-xml"><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span> by Jean Gontijo (<span class="language-xml"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&#x27;https://codepen.io/jeangontijo&#x27;</span>&gt;</span></span>@jeangontijo<span class="language-xml"><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span>) on <span class="language-xml"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&#x27;https://codepen.io&#x27;</span>&gt;</span></span>CodePen<span class="language-xml"><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span>.</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<iframe height='265' scrolling='no' title='Fancy Animated SVG Menu' src='//codepen.io/jeangontijo/embed/OxVywj/?height=265&theme-id=0&default-tab=css,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/jeangontijo/pen/OxVywj/'>Fancy Animated SVG Menu</a> by Jean Gontijo (<a href='https://codepen.io/jeangontijo'>@jeangontijo</a>) on <a href='https://codepen.io'>CodePen</a>
+</iframe>
+
+
+<ul>
+<li><p>插入视频</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">video</span> <span class="attr">src</span>=<span class="string">&quot;./imgs/video.mov&quot;</span>/&gt;</span></span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>​		更多标签见<a href="https://support.typora.io/HTML/">https://support.typora.io/HTML/</a></p>
 ]]></content>
       <categories>
-        <category>算法</category>
+        <category>markdown</category>
       </categories>
       <tags>
-        <tag>leetcode</tag>
+        <tag>markdown</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MySQL自动生成word表格</title>
+    <url>/2022/08/14/MySQL%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90word%E8%A1%A8%E6%A0%BC/</url>
+    <content><![CDATA[<p><strong>有时需要用word表格展示数据库表设计，这里介绍一款用于自动生成world表格文件的小工具。</strong></p>
+<span id="more"></span>
+
+<ul>
+<li><p>工具截图</p>
+<p><img data-src="https://orangestart.oss-cn-chengdu.aliyuncs.com/myblog/202208142224578.png"></p>
+</li>
+</ul>
+<p><strong>使用方法</strong></p>
+<ul>
+<li><p>使用WinRAR打开jar文件</p>
+<p><img data-src="https://orangestart.oss-cn-chengdu.aliyuncs.com/myblog/202208142224318.png"></p>
+</li>
+<li><p>修改配置文件</p>
+<p><img data-src="https://orangestart.oss-cn-chengdu.aliyuncs.com/myblog/202208142225413.png"></p>
+</li>
+<li><p>运行工具</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">Java <span class="literal">-jar</span> mysql_to_word.jar</span><br></pre></td></tr></table></figure>
+
+<p><img data-src="https://orangestart.oss-cn-chengdu.aliyuncs.com/myblog/202208142225814.png"></p>
+</li>
+<li><p>生成word文件</p>
+<ul>
+<li>使用浏览器访问</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">localhost:8888/test/demo</span><br></pre></td></tr></table></figure>
+
+<p><img data-src="https://orangestart.oss-cn-chengdu.aliyuncs.com/myblog/202208142225997.png"></p>
+<ul>
+<li><p>查看生成文件</p>
+<p><img data-src="https://orangestart.oss-cn-chengdu.aliyuncs.com/myblog/202208142225765.png"></p>
+<p><img data-src="https://orangestart.oss-cn-chengdu.aliyuncs.com/myblog/202208142225691.png"></p>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>工具下载地址：</strong></p>
+<p>​		<a href="https://orangestart.lanzouj.com/ixgdS047g5oh">https://orangestart.lanzouj.com/ixgdS047g5oh</a><br>​				密码:2tgj</p>
+]]></content>
+      <categories>
+        <category>tools</category>
+      </categories>
+      <tags>
+        <tag>mysql</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java实现发送邮件功能</title>
+    <url>/2022/08/28/Java%E5%AE%9E%E7%8E%B0%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6%E5%8A%9F%E8%83%BD/</url>
+    <content><![CDATA[<p>有时需要发送邮箱验证码，用于账户注册、登录、密码重置等功能操作。</p>
+<span id="more"></span>
+
+<h4 id="Java实现发送邮件"><a href="#Java实现发送邮件" class="headerlink" title="Java实现发送邮件"></a>Java实现发送邮件</h4><ul>
+<li><p>pom文件中导入依赖</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.sun.mail<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>javax.mail<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.5.6<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<ul>
+<li><p>获取发送邮箱权限码</p>
+<p><img data-src="https://orangestart.oss-cn-chengdu.aliyuncs.com/myblog/202208281756594.png" alt="image-20220828175530544"></p>
+</li>
+<li><p>具体实现</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.orange.emialUtil;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Properties;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.mail.Authenticator;</span><br><span class="line"><span class="keyword">import</span> javax.mail.Message;</span><br><span class="line"><span class="keyword">import</span> javax.mail.MessagingException;</span><br><span class="line"><span class="keyword">import</span> javax.mail.PasswordAuthentication;</span><br><span class="line"><span class="keyword">import</span> javax.mail.Session;</span><br><span class="line"><span class="keyword">import</span> javax.mail.Transport;</span><br><span class="line"><span class="keyword">import</span> javax.mail.internet.InternetAddress;</span><br><span class="line"><span class="keyword">import</span> javax.mail.internet.MimeMessage;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * send email</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">App</span> &#123;</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;start send email...&quot;</span>);</span><br><span class="line">    <span class="type">String</span> <span class="variable">to</span> <span class="operator">=</span> <span class="string">&quot;orangestart@yeah.net&quot;</span>;</span><br><span class="line">    <span class="type">int</span> <span class="variable">code</span> <span class="operator">=</span> getNum();</span><br><span class="line">    emailUtils(to, code);</span><br><span class="line">    System.out.println(<span class="string">&quot;success!&quot;</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * </span></span><br><span class="line"><span class="comment">   * <span class="doctag">@Description</span></span></span><br><span class="line"><span class="comment">   * <span class="doctag">@author</span> orange</span></span><br><span class="line"><span class="comment">   * <span class="doctag">@date</span> 2021年12月23日下午8:34:51</span></span><br><span class="line"><span class="comment">   * <span class="doctag">@param</span> to   邮件接受方</span></span><br><span class="line"><span class="comment">   * <span class="doctag">@param</span> code 验证码</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">emailUtils</span><span class="params">(String to, <span class="type">int</span> code)</span> &#123;</span><br><span class="line">    <span class="comment">// 发件人电子邮箱</span></span><br><span class="line">    <span class="keyword">final</span> <span class="type">String</span> <span class="variable">from</span> <span class="operator">=</span> <span class="string">&quot;xxx@qq.com&quot;</span>;</span><br><span class="line">    <span class="comment">// 指定发送邮件的主机为 smtp.qq.com, QQ 邮件服务器</span></span><br><span class="line">    <span class="type">String</span> <span class="variable">host</span> <span class="operator">=</span> <span class="string">&quot;smtp.qq.com&quot;</span>;</span><br><span class="line">    <span class="comment">// qq邮箱授权码，要用自己的，每个邮箱都不一样</span></span><br><span class="line">    <span class="keyword">final</span> <span class="type">String</span> <span class="variable">authorizationCode</span> <span class="operator">=</span> <span class="string">&quot;xxx&quot;</span>;</span><br><span class="line">    <span class="comment">// 获取系统属性</span></span><br><span class="line">    <span class="type">Properties</span> <span class="variable">properties</span> <span class="operator">=</span> System.getProperties();</span><br><span class="line">    <span class="comment">// 设置邮件服务器</span></span><br><span class="line">    properties.setProperty(<span class="string">&quot;mail.smtp.host&quot;</span>, host);</span><br><span class="line">    properties.put(<span class="string">&quot;mail.smtp.auth&quot;</span>, <span class="string">&quot;true&quot;</span>);</span><br><span class="line">    <span class="comment">// 获取默认session对象</span></span><br><span class="line">    <span class="type">Session</span> <span class="variable">session</span> <span class="operator">=</span> Session.getDefaultInstance(properties, <span class="keyword">new</span> <span class="title class_">Authenticator</span>() &#123;</span><br><span class="line">      <span class="keyword">public</span> PasswordAuthentication <span class="title function_">getPasswordAuthentication</span><span class="params">()</span> &#123;</span><br><span class="line">         <span class="comment">// 发件人邮件用户名、授权码</span></span><br><span class="line">         <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">PasswordAuthentication</span>(from, authorizationCode);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="comment">// 创建默认的 MimeMessage 对象</span></span><br><span class="line">        <span class="type">MimeMessage</span> <span class="variable">message</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">MimeMessage</span>(session);</span><br><span class="line">        <span class="comment">// Set From: 头部头字段</span></span><br><span class="line">        message.setFrom(<span class="keyword">new</span> <span class="title class_">InternetAddress</span>(from));</span><br><span class="line">        <span class="comment">// Set To: 头部头字段</span></span><br><span class="line">        message.addRecipient(Message.RecipientType.TO, <span class="keyword">new</span> <span class="title class_">InternetAddress</span>(to));</span><br><span class="line">        <span class="comment">// Set Subject: 标题</span></span><br><span class="line">        message.setSubject(<span class="string">&quot;【橙子学苑】&quot;</span>);</span><br><span class="line">        <span class="comment">// 设置消息体 code:【验证码】</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">messBody</span> <span class="operator">=</span> <span class="string">&quot;验证码：&quot;</span> + code + <span class="string">&quot;，您正在进行身份验证，5分钟内有效。&quot;</span>;</span><br><span class="line">        message.setText(messBody);</span><br><span class="line">        <span class="comment">// 发送消息</span></span><br><span class="line">        Transport.send(message);</span><br><span class="line">        System.out.println(<span class="string">&quot;Sent Email successfully....&quot;</span>);</span><br><span class="line">      &#125; <span class="keyword">catch</span> (MessagingException mex) &#123;</span><br><span class="line">        mex.printStackTrace();</span><br><span class="line">      &#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// generate a random number</span></span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">getNum</span><span class="params">()</span> &#123;</span><br><span class="line">	<span class="keyword">return</span> (<span class="type">int</span>) (Math.random() * <span class="number">10000</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>测试</p>
+<img data-src="https://orangestart.oss-cn-chengdu.aliyuncs.com/myblog/202208281759727.png" alt="image-20220828175952562"/></li>
+</ul>
+<img data-src="https://orangestart.oss-cn-chengdu.aliyuncs.com/myblog/202208281802189.png" style="zoom:88%;" />
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>tools</tag>
       </tags>
   </entry>
   <entry>
@@ -1267,6 +1240,148 @@
       </tags>
   </entry>
   <entry>
+    <title>使用数组解决字符串相关问题</title>
+    <url>/2022/08/21/%E4%BD%BF%E7%94%A8%E6%95%B0%E7%BB%84%E8%A7%A3%E5%86%B3%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<p>今天在<a href="https://www.leetcode.cn/">leetcode</a>做字符串计数相关题目时，学习了使用辅助数组来解决问题。</p>
+<span id="more"></span>
+
+<h4 id="适用情况"><a href="#适用情况" class="headerlink" title="适用情况"></a>适用情况</h4><p>字符串中仅存在小写&#x2F;大写字母，并且涉及字母计数的情景。</p>
+<h4 id="数组构造"><a href="#数组构造" class="headerlink" title="数组构造"></a>数组构造</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span>[] arr = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">26</span>];</span><br></pre></td></tr></table></figure>
+
+<p><strong>说明：</strong>长度26代表各个字母，并以数组index下标依次表示a, b, c……x, y, z；数组中分别存放每个字母出现的个数，例如：arr[0] &#x3D;&#x3D; 1，表示字母<code>a</code>在字符串中出现了一次。</p>
+<h4 id="相关题目"><a href="#相关题目" class="headerlink" title="相关题目"></a>相关题目</h4><h5 id="题目一"><a href="#题目一" class="headerlink" title="题目一"></a>题目一</h5><ul>
+<li><p>标题：<a href="https://leetcode.cn/problems/first-unique-character-in-a-string/">387. First Unique Character in a String</a></p>
+</li>
+<li><p>描述：</p>
+<p>Given a string s, find the first non-repeating character in it and return its index. If it does not exist, return -1.</p>
+</li>
+<li><p>要求：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Example 1:</span><br><span class="line">    Input: s = &quot;leetcode&quot;</span><br><span class="line">    Output: 0</span><br><span class="line">    </span><br><span class="line">Example 2:</span><br><span class="line">    Input: s = &quot;loveleetcode&quot;</span><br><span class="line">    Output: 2</span><br><span class="line"></span><br><span class="line">Example 3:</span><br><span class="line">    Input: s = &quot;aabb&quot;</span><br><span class="line">    Output: -1</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>代码：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">firstUniqChar</span><span class="params">(String s)</span> &#123;</span><br><span class="line">        <span class="type">int</span>[] arr = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">26</span>];</span><br><span class="line">        <span class="type">char</span>[] schar = s.toCharArray();</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="type">char</span> temp : schar)&#123;</span><br><span class="line">            arr[temp - <span class="string">&#x27;a&#x27;</span>]++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; schar.length; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(arr[schar[i] - <span class="string">&#x27;a&#x27;</span>] == <span class="number">1</span>)&#123;</span><br><span class="line">                <span class="keyword">return</span> i;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h5 id="题目二"><a href="#题目二" class="headerlink" title="题目二"></a>题目二</h5><ul>
+<li><p>标题：<a href="https://leetcode.cn/problems/ransom-note/">383. Ransom Note</a></p>
+</li>
+<li><p>描述：</p>
+<p>Given two strings ransomNote and magazine, return true if ransomNote can be constructed by using the letters from magazine and false otherwise.</p>
+<p>Each letter in magazine can only be used once in ransomNote.</p>
+</li>
+<li><p>要求：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Example 1:</span><br><span class="line">    Input: ransomNote = &quot;a&quot;, magazine = &quot;b&quot;</span><br><span class="line">    Output: false</span><br><span class="line">    </span><br><span class="line">Example 2:</span><br><span class="line">    Input: ransomNote = &quot;aa&quot;, magazine = &quot;ab&quot;</span><br><span class="line">    Output: false</span><br><span class="line"></span><br><span class="line">Example 3:</span><br><span class="line">    Input: ransomNote = &quot;aa&quot;, magazine = &quot;aab&quot;</span><br><span class="line">    Output: true</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>代码：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">canConstruct</span><span class="params">(String r, String m)</span> &#123;</span><br><span class="line">        <span class="type">int</span>[] arr = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">26</span>];</span><br><span class="line">        <span class="type">char</span>[] rchar = r.toCharArray();</span><br><span class="line">        <span class="type">char</span>[] mchar = m.toCharArray();</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="type">char</span> temp : mchar)&#123;</span><br><span class="line">            arr[temp - <span class="string">&#x27;a&#x27;</span>]++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">char</span> temp : rchar)&#123;</span><br><span class="line">            <span class="keyword">if</span>(arr[temp - <span class="string">&#x27;a&#x27;</span>] &gt; <span class="number">0</span>)&#123;</span><br><span class="line">                arr[temp - <span class="string">&#x27;a&#x27;</span>]--;</span><br><span class="line">            &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h5 id="题目三"><a href="#题目三" class="headerlink" title="题目三"></a>题目三</h5><ul>
+<li><p>标题：<a href="https://leetcode.cn/problems/valid-anagram/">242. Valid Anagram</a></p>
+</li>
+<li><p>描述：</p>
+<p>Given two strings s and t, return true if t is an anagram of s, and false otherwise.</p>
+<p>An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.</p>
+</li>
+<li><p>要求：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Example 1:</span><br><span class="line">    Input: s = &quot;anagram&quot;, t = &quot;nagaram&quot;</span><br><span class="line">    Output: true</span><br><span class="line">    </span><br><span class="line">Example 2:</span><br><span class="line">    Input: s = &quot;rat&quot;, t = &quot;car&quot;</span><br><span class="line">    Output: false</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>代码：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">isAnagram</span><span class="params">(String s, String t)</span> &#123;</span><br><span class="line">        <span class="type">int</span>[] arr = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">26</span>];</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="type">char</span> temp : s.toCharArray())&#123;</span><br><span class="line">            arr[temp - <span class="string">&#x27;a&#x27;</span>]++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">char</span> temp : t.toCharArray())&#123;</span><br><span class="line">            arr[temp - <span class="string">&#x27;a&#x27;</span>]--;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> temp : arr)&#123;</span><br><span class="line">            <span class="keyword">if</span>(temp != <span class="number">0</span>)&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>leetcode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>vim入门</title>
+    <url>/2022/12/23/vim%E5%85%A5%E9%97%A8/</url>
+    <content><![CDATA[<p>vim是Linux内置的一款文本编辑器，提供纯键盘编辑输入方式，脱离鼠标的同时又不输优雅。</p>
+<span id="more"></span>
+
+<p>​		初学vim之前，需要了解它的三种模式：<b>命令模式</b>、<b>输入模式</b>、<b>末行模式</b>。其中，命令模式可以操作一些快捷键，例如：滚屏操作、光标移动。输入模式即常见的编辑模式，可以自由输入文本内容。末行模式提供了一些特殊的操作，例如：替换、快速查找、显示行号等。</p>
+<p>​		当使用vim打开一个文件时，默认为<b>命令模式</b>，在命令模式中按下<kbd>i</kbd>后，便进入了<b>编辑模式</b>；在编辑模式中按下<kbd>Esc</kbd>后，便又返回命令模式；在命令模式中按下<kbd>Shift</kbd>+<kbd>;</kbd>后，此时进入<b>末行模式</b>，在<b>:</b>后便可输入一些末行命令。</p>
+<p>​	打开文件：</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">vim test.txt</span><br></pre></td></tr></table></figure>
+
+<p>​		输入上述命令时，会在当前目录下寻找并打开test.txt文件，如果该文件不存在，则在当前目录下新建一个test.txt文件。</p>
+<h4 id="命令模式"><a href="#命令模式" class="headerlink" title="命令模式"></a>命令模式</h4><blockquote>
+<ol>
+<li>注意区分大小写。</li>
+<li>打开文件时默认进入命令模式，输入模式或者末行模式中按下<kbd>Esc</kbd>，进入命令模式。</li>
+</ol>
+</blockquote>
+<h5 id="控制光标"><a href="#控制光标" class="headerlink" title="控制光标"></a>控制光标</h5><p>​	<kbd>h</kbd>：向左移动光标</p>
+<p>​	<kbd>j</kbd>：向下移动光标</p>
+<p>​	<kbd>k</kbd>：向上移动光标</p>
+<p>​	<kbd>l</kbd>：向右移动光标</p>
+<h5 id="滚屏操作"><a href="#滚屏操作" class="headerlink" title="滚屏操作"></a>滚屏操作</h5><p>​	<kbd>Ctrl</kbd>+<kbd>u</kbd>：向上滚动半屏</p>
+<p>​	<kbd>Ctrl</kbd>+<kbd>d</kbd>：向下滚动半屏</p>
+<p>​	<kbd>Ctrl</kbd>+<kbd>b</kbd>：向上滚动一屏</p>
+<p>​	<kbd>Ctrl</kbd>+<kbd>f</kbd>：向下滚动一屏</p>
+<h5 id="移动到行首或行尾"><a href="#移动到行首或行尾" class="headerlink" title="移动到行首或行尾"></a>移动到行首或行尾</h5><p>​	<kbd>0</kbd>：快速移动到光标所在行的行首</p>
+<p>​	<kbd>$</kbd>：快速移动到光标所在行</p>
+<p>​	<kbd>^</kbd>：快速移动到光标所在行<b>第一个非空字符</b></p>
+<h5 id="其他移动光标的操作"><a href="#其他移动光标的操作" class="headerlink" title="其他移动光标的操作"></a>其他移动光标的操作</h5><p>​	<kbd>G</kbd>：移动到文件最后行行首</p>
+<p>​	<kbd>2</kbd>+<kbd>G</kbd>：移动到指定行行首</p>
+<p>​	<kbd>gg</kbd>：移动到文件第一行行首</p>
+<p>​	<kbd>>></kbd>：文本向右移动(缩进)</p>
+<p>​	<kbd><<</kbd>：文本向左移动</p>
+<h5 id="删除操作"><a href="#删除操作" class="headerlink" title="删除操作"></a>删除操作</h5><p>​	<kbd>x</kbd>：删除光标后一个字符</p>
+<p>​	<kbd>X</kbd>：删除光标前一个字符</p>
+<p>​	<kbd>dd</kbd>：删除光标所在行</p>
+<p>​	<kbd>10</kbd>+<kbd>dd</kbd>：向下删除10行</p>
+<p>​	<kbd>d0</kbd>：删除光标前所有内容</p>
+<p>​	<kbd>D</kbd> ：删除光标后所有内容</p>
+<p>​	<kbd>daw</kbd>：删除光标所在单词</p>
+<h5 id="可视模式"><a href="#可视模式" class="headerlink" title="可视模式"></a>可视模式</h5><p>​	<kbd>v</kbd>：按字符移动光标选择内容</p>
+<p>​	<kbd>V</kbd>：按行上下移动选择内容</p>
+<h5 id="撤销"><a href="#撤销" class="headerlink" title="撤销"></a>撤销</h5><p>​	<kbd>u</kbd>：撤销一步操作</p>
+<p>​	<kbd>Ctrl</kbd>+<kbd>r</kbd>：反撤销</p>
+<h5 id="复制粘贴"><a href="#复制粘贴" class="headerlink" title="复制粘贴"></a>复制粘贴</h5><blockquote>
+<p>配合可视模式，选中内容。</p>
+</blockquote>
+<p>​	<kbd>y</kbd>：复制</p>
+<p>​	<kbd>p</kbd>：粘贴</p>
+<p>​	<kbd>yy</kbd>：复制光标所在行</p>
+<h5 id="重复操作"><a href="#重复操作" class="headerlink" title="重复操作"></a>重复操作</h5><p>​	<kbd>.</kbd>：重复上一步操作</p>
+<h5 id="替换操作"><a href="#替换操作" class="headerlink" title="替换操作"></a>替换操作</h5><p>​	<kbd>r</kbd>：如将n替换为m，先将光标移动到字母n下，然后再按r，再按下m即可。</p>
+<p>​	<kbd>R</kbd>：按下R后，再按要替换的字母，替换后，光标会移动到后一个字符，可以再次执行替换操作。</p>
+<h4 id="输入模式"><a href="#输入模式" class="headerlink" title="输入模式"></a>输入模式</h4><blockquote>
+<p>输入模式下，不能使用快捷键，可以正常输入内容。</p>
+</blockquote>
+<h5 id="进入输入模式"><a href="#进入输入模式" class="headerlink" title="进入输入模式"></a>进入输入模式</h5><p>​	<kbd>i</kbd>：插入光标前一个字符</p>
+<p>​	<kbd>a</kbd>：插入光标后一个字符</p>
+<p>​	<kbd>I</kbd>：插入行首</p>
+<p>​	<kbd>A</kbd>：插入行尾</p>
+<p>​	<kbd>o</kbd>：向下另起一行，插入行首</p>
+<p>​	<kbd>O</kbd>：向上另起一行，插入行首</p>
+<h4 id="末行模式"><a href="#末行模式" class="headerlink" title="末行模式"></a>末行模式</h4><blockquote>
+<p>在命令模式下，按<kbd>:</kbd>进入末行模式。</p>
+</blockquote>
+<h5 id="退出"><a href="#退出" class="headerlink" title="退出"></a>退出</h5><p>​	<kbd>wq</kbd>：保存并退出</p>
+<p>​	<kbd>q</kbd>：直接退出</p>
+<p>​	<kbd>q!</kbd>：强制退出</p>
+<h5 id="显示行号"><a href="#显示行号" class="headerlink" title="显示行号"></a>显示行号</h5><p>​	<kbd>set nu</kbd>：显示行号</p>
+<p>​	<kbd>set nonu</kbd>：关闭行号</p>
+<h5 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h5><p>​	<kbd>/查找内容</kbd>：按<kbd>n</kbd>查找下一个，按<kbd>N</kbd>查找上一个</p>
+<p>​	<kbd>set hlsearch</kbd>：高亮显示查找内容</p>
+<h5 id="替换"><a href="#替换" class="headerlink" title="替换"></a>替换</h5><p>​	<kbd>%s/abc/123/g</kbd>：将当前文件中的所有abc替换成123</p>
+<p>​	<kbd>1, 10s/abc/123/g</kbd>：将第一行至第十行之间的 abc替换成123</p>
+<p>​	<em>%表示整个文件；1，10表示1到10行范围内</em></p>
+<p>​	<em>s表示替换</em></p>
+<p>​	<em>g表示全局</em></p>
+]]></content>
+      <categories>
+        <category>tools</category>
+      </categories>
+      <tags>
+        <tag>vim</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>如何高效学习</title>
     <url>/2022/08/28/%E5%A6%82%E4%BD%95%E9%AB%98%E6%95%88%E5%AD%A6%E4%B9%A0/</url>
     <content><![CDATA[<p>如何用更少的时间获得更高的学习成效，这是令每位学习者都头疼的事情。那么，怎么才能做到高效学习呢，这里总结了一些参考资料。</p>
@@ -1317,37 +1432,8 @@
       </tags>
   </entry>
   <entry>
-    <title>Java实现发送邮件功能</title>
-    <url>/2022/08/28/Java%E5%AE%9E%E7%8E%B0%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6%E5%8A%9F%E8%83%BD/</url>
-    <content><![CDATA[<p>有时需要发送邮箱验证码，用于账户注册、登录、密码重置等功能操作。</p>
-<span id="more"></span>
-
-<h4 id="Java实现发送邮件"><a href="#Java实现发送邮件" class="headerlink" title="Java实现发送邮件"></a>Java实现发送邮件</h4><ul>
-<li><p>pom文件中导入依赖</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.sun.mail<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>javax.mail<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.5.6<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-<ul>
-<li><p>获取发送邮箱权限码</p>
-<p><img data-src="https://orangestart.oss-cn-chengdu.aliyuncs.com/myblog/202208281756594.png" alt="image-20220828175530544"></p>
-</li>
-<li><p>具体实现</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.orange.emialUtil;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Properties;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.mail.Authenticator;</span><br><span class="line"><span class="keyword">import</span> javax.mail.Message;</span><br><span class="line"><span class="keyword">import</span> javax.mail.MessagingException;</span><br><span class="line"><span class="keyword">import</span> javax.mail.PasswordAuthentication;</span><br><span class="line"><span class="keyword">import</span> javax.mail.Session;</span><br><span class="line"><span class="keyword">import</span> javax.mail.Transport;</span><br><span class="line"><span class="keyword">import</span> javax.mail.internet.InternetAddress;</span><br><span class="line"><span class="keyword">import</span> javax.mail.internet.MimeMessage;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * send email</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">App</span> &#123;</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;start send email...&quot;</span>);</span><br><span class="line">    <span class="type">String</span> <span class="variable">to</span> <span class="operator">=</span> <span class="string">&quot;orangestart@yeah.net&quot;</span>;</span><br><span class="line">    <span class="type">int</span> <span class="variable">code</span> <span class="operator">=</span> getNum();</span><br><span class="line">    emailUtils(to, code);</span><br><span class="line">    System.out.println(<span class="string">&quot;success!&quot;</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * </span></span><br><span class="line"><span class="comment">   * <span class="doctag">@Description</span></span></span><br><span class="line"><span class="comment">   * <span class="doctag">@author</span> orange</span></span><br><span class="line"><span class="comment">   * <span class="doctag">@date</span> 2021年12月23日下午8:34:51</span></span><br><span class="line"><span class="comment">   * <span class="doctag">@param</span> to   邮件接受方</span></span><br><span class="line"><span class="comment">   * <span class="doctag">@param</span> code 验证码</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">emailUtils</span><span class="params">(String to, <span class="type">int</span> code)</span> &#123;</span><br><span class="line">    <span class="comment">// 发件人电子邮箱</span></span><br><span class="line">    <span class="keyword">final</span> <span class="type">String</span> <span class="variable">from</span> <span class="operator">=</span> <span class="string">&quot;xxx@qq.com&quot;</span>;</span><br><span class="line">    <span class="comment">// 指定发送邮件的主机为 smtp.qq.com, QQ 邮件服务器</span></span><br><span class="line">    <span class="type">String</span> <span class="variable">host</span> <span class="operator">=</span> <span class="string">&quot;smtp.qq.com&quot;</span>;</span><br><span class="line">    <span class="comment">// qq邮箱授权码，要用自己的，每个邮箱都不一样</span></span><br><span class="line">    <span class="keyword">final</span> <span class="type">String</span> <span class="variable">authorizationCode</span> <span class="operator">=</span> <span class="string">&quot;xxx&quot;</span>;</span><br><span class="line">    <span class="comment">// 获取系统属性</span></span><br><span class="line">    <span class="type">Properties</span> <span class="variable">properties</span> <span class="operator">=</span> System.getProperties();</span><br><span class="line">    <span class="comment">// 设置邮件服务器</span></span><br><span class="line">    properties.setProperty(<span class="string">&quot;mail.smtp.host&quot;</span>, host);</span><br><span class="line">    properties.put(<span class="string">&quot;mail.smtp.auth&quot;</span>, <span class="string">&quot;true&quot;</span>);</span><br><span class="line">    <span class="comment">// 获取默认session对象</span></span><br><span class="line">    <span class="type">Session</span> <span class="variable">session</span> <span class="operator">=</span> Session.getDefaultInstance(properties, <span class="keyword">new</span> <span class="title class_">Authenticator</span>() &#123;</span><br><span class="line">      <span class="keyword">public</span> PasswordAuthentication <span class="title function_">getPasswordAuthentication</span><span class="params">()</span> &#123;</span><br><span class="line">         <span class="comment">// 发件人邮件用户名、授权码</span></span><br><span class="line">         <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">PasswordAuthentication</span>(from, authorizationCode);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="comment">// 创建默认的 MimeMessage 对象</span></span><br><span class="line">        <span class="type">MimeMessage</span> <span class="variable">message</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">MimeMessage</span>(session);</span><br><span class="line">        <span class="comment">// Set From: 头部头字段</span></span><br><span class="line">        message.setFrom(<span class="keyword">new</span> <span class="title class_">InternetAddress</span>(from));</span><br><span class="line">        <span class="comment">// Set To: 头部头字段</span></span><br><span class="line">        message.addRecipient(Message.RecipientType.TO, <span class="keyword">new</span> <span class="title class_">InternetAddress</span>(to));</span><br><span class="line">        <span class="comment">// Set Subject: 标题</span></span><br><span class="line">        message.setSubject(<span class="string">&quot;【橙子学苑】&quot;</span>);</span><br><span class="line">        <span class="comment">// 设置消息体 code:【验证码】</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">messBody</span> <span class="operator">=</span> <span class="string">&quot;验证码：&quot;</span> + code + <span class="string">&quot;，您正在进行身份验证，5分钟内有效。&quot;</span>;</span><br><span class="line">        message.setText(messBody);</span><br><span class="line">        <span class="comment">// 发送消息</span></span><br><span class="line">        Transport.send(message);</span><br><span class="line">        System.out.println(<span class="string">&quot;Sent Email successfully....&quot;</span>);</span><br><span class="line">      &#125; <span class="keyword">catch</span> (MessagingException mex) &#123;</span><br><span class="line">        mex.printStackTrace();</span><br><span class="line">      &#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// generate a random number</span></span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">getNum</span><span class="params">()</span> &#123;</span><br><span class="line">	<span class="keyword">return</span> (<span class="type">int</span>) (Math.random() * <span class="number">10000</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>测试</p>
-<img data-src="https://orangestart.oss-cn-chengdu.aliyuncs.com/myblog/202208281759727.png" alt="image-20220828175952562"/></li>
-</ul>
-<img data-src="https://orangestart.oss-cn-chengdu.aliyuncs.com/myblog/202208281802189.png" style="zoom:88%;" />
-]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>tools</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hello World</title>
-    <url>/2022/08/09/hello-world/</url>
+    <url>/2022/12/19/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
 <span id="more"></span>
 
