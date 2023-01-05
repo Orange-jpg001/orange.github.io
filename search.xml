@@ -1,6 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>MySQL自动生成word表格</title>
+    <url>/2022/08/14/MySQL%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90word%E8%A1%A8%E6%A0%BC/</url>
+    <content><![CDATA[<p><strong>有时需要用word表格展示数据库表设计，这里介绍一款用于自动生成world表格文件的小工具。</strong></p>
+<span id="more"></span>
+
+<ul>
+<li><p>工具截图</p>
+<p><img data-src="https://orangestart.oss-cn-chengdu.aliyuncs.com/myblog/202208142224578.png"></p>
+</li>
+</ul>
+<p><strong>使用方法</strong></p>
+<ul>
+<li><p>使用WinRAR打开jar文件</p>
+<p><img data-src="https://orangestart.oss-cn-chengdu.aliyuncs.com/myblog/202208142224318.png"></p>
+</li>
+<li><p>修改配置文件</p>
+<p><img data-src="https://orangestart.oss-cn-chengdu.aliyuncs.com/myblog/202208142225413.png"></p>
+</li>
+<li><p>运行工具</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">Java <span class="literal">-jar</span> mysql_to_word.jar</span><br></pre></td></tr></table></figure>
+
+<p><img data-src="https://orangestart.oss-cn-chengdu.aliyuncs.com/myblog/202208142225814.png"></p>
+</li>
+<li><p>生成word文件</p>
+<ul>
+<li>使用浏览器访问</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">localhost:8888/test/demo</span><br></pre></td></tr></table></figure>
+
+<p><img data-src="https://orangestart.oss-cn-chengdu.aliyuncs.com/myblog/202208142225997.png"></p>
+<ul>
+<li><p>查看生成文件</p>
+<p><img data-src="https://orangestart.oss-cn-chengdu.aliyuncs.com/myblog/202208142225765.png"></p>
+<p><img data-src="https://orangestart.oss-cn-chengdu.aliyuncs.com/myblog/202208142225691.png"></p>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>工具下载地址：</strong></p>
+<p>​		<a href="https://orangestart.lanzouj.com/ixgdS047g5oh">https://orangestart.lanzouj.com/ixgdS047g5oh</a><br>​				密码:2tgj</p>
+]]></content>
+      <categories>
+        <category>tools</category>
+      </categories>
+      <tags>
+        <tag>mysql</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>常用IDE快捷键</title>
     <url>/2022/08/14/%E5%B8%B8%E7%94%A8IDE%E5%BF%AB%E6%8D%B7%E9%94%AE/</url>
     <content><![CDATA[<p>在日常开发往往需要用到各种IDE，那么熟练使用快捷键进行开发可谓是如虎添翼，本篇blog总结了eclipse、idea的快捷键。</p>
@@ -1069,52 +1118,59 @@
       </tags>
   </entry>
   <entry>
-    <title>MySQL自动生成word表格</title>
-    <url>/2022/08/14/MySQL%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90word%E8%A1%A8%E6%A0%BC/</url>
-    <content><![CDATA[<p><strong>有时需要用word表格展示数据库表设计，这里介绍一款用于自动生成world表格文件的小工具。</strong></p>
+    <title>使用数组解决字符串相关问题</title>
+    <url>/2022/08/21/%E4%BD%BF%E7%94%A8%E6%95%B0%E7%BB%84%E8%A7%A3%E5%86%B3%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<p>今天在<a href="https://www.leetcode.cn/">leetcode</a>做字符串计数相关题目时，学习了使用辅助数组来解决问题。</p>
 <span id="more"></span>
 
-<ul>
-<li><p>工具截图</p>
-<p><img data-src="https://orangestart.oss-cn-chengdu.aliyuncs.com/myblog/202208142224578.png"></p>
-</li>
-</ul>
-<p><strong>使用方法</strong></p>
-<ul>
-<li><p>使用WinRAR打开jar文件</p>
-<p><img data-src="https://orangestart.oss-cn-chengdu.aliyuncs.com/myblog/202208142224318.png"></p>
-</li>
-<li><p>修改配置文件</p>
-<p><img data-src="https://orangestart.oss-cn-chengdu.aliyuncs.com/myblog/202208142225413.png"></p>
-</li>
-<li><p>运行工具</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">Java <span class="literal">-jar</span> mysql_to_word.jar</span><br></pre></td></tr></table></figure>
+<h4 id="适用情况"><a href="#适用情况" class="headerlink" title="适用情况"></a>适用情况</h4><p>字符串中仅存在小写&#x2F;大写字母，并且涉及字母计数的情景。</p>
+<h4 id="数组构造"><a href="#数组构造" class="headerlink" title="数组构造"></a>数组构造</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span>[] arr = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">26</span>];</span><br></pre></td></tr></table></figure>
 
-<p><img data-src="https://orangestart.oss-cn-chengdu.aliyuncs.com/myblog/202208142225814.png"></p>
+<p><strong>说明：</strong>长度26代表各个字母，并以数组index下标依次表示a, b, c……x, y, z；数组中分别存放每个字母出现的个数，例如：arr[0] &#x3D;&#x3D; 1，表示字母<code>a</code>在字符串中出现了一次。</p>
+<h4 id="相关题目"><a href="#相关题目" class="headerlink" title="相关题目"></a>相关题目</h4><h5 id="题目一"><a href="#题目一" class="headerlink" title="题目一"></a>题目一</h5><ul>
+<li><p>标题：<a href="https://leetcode.cn/problems/first-unique-character-in-a-string/">387. First Unique Character in a String</a></p>
 </li>
-<li><p>生成word文件</p>
-<ul>
-<li>使用浏览器访问</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">localhost:8888/test/demo</span><br></pre></td></tr></table></figure>
-
-<p><img data-src="https://orangestart.oss-cn-chengdu.aliyuncs.com/myblog/202208142225997.png"></p>
-<ul>
-<li><p>查看生成文件</p>
-<p><img data-src="https://orangestart.oss-cn-chengdu.aliyuncs.com/myblog/202208142225765.png"></p>
-<p><img data-src="https://orangestart.oss-cn-chengdu.aliyuncs.com/myblog/202208142225691.png"></p>
+<li><p>描述：</p>
+<p>Given a string s, find the first non-repeating character in it and return its index. If it does not exist, return -1.</p>
 </li>
-</ul>
+<li><p>要求：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Example 1:</span><br><span class="line">    Input: s = &quot;leetcode&quot;</span><br><span class="line">    Output: 0</span><br><span class="line">    </span><br><span class="line">Example 2:</span><br><span class="line">    Input: s = &quot;loveleetcode&quot;</span><br><span class="line">    Output: 2</span><br><span class="line"></span><br><span class="line">Example 3:</span><br><span class="line">    Input: s = &quot;aabb&quot;</span><br><span class="line">    Output: -1</span><br></pre></td></tr></table></figure>
 </li>
+<li><p>代码：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">firstUniqChar</span><span class="params">(String s)</span> &#123;</span><br><span class="line">        <span class="type">int</span>[] arr = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">26</span>];</span><br><span class="line">        <span class="type">char</span>[] schar = s.toCharArray();</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="type">char</span> temp : schar)&#123;</span><br><span class="line">            arr[temp - <span class="string">&#x27;a&#x27;</span>]++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; schar.length; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(arr[schar[i] - <span class="string">&#x27;a&#x27;</span>] == <span class="number">1</span>)&#123;</span><br><span class="line">                <span class="keyword">return</span> i;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 </ul>
-<p><strong>工具下载地址：</strong></p>
-<p>​		<a href="https://orangestart.lanzouj.com/ixgdS047g5oh">https://orangestart.lanzouj.com/ixgdS047g5oh</a><br>​				密码:2tgj</p>
+<h5 id="题目二"><a href="#题目二" class="headerlink" title="题目二"></a>题目二</h5><ul>
+<li><p>标题：<a href="https://leetcode.cn/problems/ransom-note/">383. Ransom Note</a></p>
+</li>
+<li><p>描述：</p>
+<p>Given two strings ransomNote and magazine, return true if ransomNote can be constructed by using the letters from magazine and false otherwise.</p>
+<p>Each letter in magazine can only be used once in ransomNote.</p>
+</li>
+<li><p>要求：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Example 1:</span><br><span class="line">    Input: ransomNote = &quot;a&quot;, magazine = &quot;b&quot;</span><br><span class="line">    Output: false</span><br><span class="line">    </span><br><span class="line">Example 2:</span><br><span class="line">    Input: ransomNote = &quot;aa&quot;, magazine = &quot;ab&quot;</span><br><span class="line">    Output: false</span><br><span class="line"></span><br><span class="line">Example 3:</span><br><span class="line">    Input: ransomNote = &quot;aa&quot;, magazine = &quot;aab&quot;</span><br><span class="line">    Output: true</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>代码：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">canConstruct</span><span class="params">(String r, String m)</span> &#123;</span><br><span class="line">        <span class="type">int</span>[] arr = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">26</span>];</span><br><span class="line">        <span class="type">char</span>[] rchar = r.toCharArray();</span><br><span class="line">        <span class="type">char</span>[] mchar = m.toCharArray();</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="type">char</span> temp : mchar)&#123;</span><br><span class="line">            arr[temp - <span class="string">&#x27;a&#x27;</span>]++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">char</span> temp : rchar)&#123;</span><br><span class="line">            <span class="keyword">if</span>(arr[temp - <span class="string">&#x27;a&#x27;</span>] &gt; <span class="number">0</span>)&#123;</span><br><span class="line">                arr[temp - <span class="string">&#x27;a&#x27;</span>]--;</span><br><span class="line">            &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h5 id="题目三"><a href="#题目三" class="headerlink" title="题目三"></a>题目三</h5><ul>
+<li><p>标题：<a href="https://leetcode.cn/problems/valid-anagram/">242. Valid Anagram</a></p>
+</li>
+<li><p>描述：</p>
+<p>Given two strings s and t, return true if t is an anagram of s, and false otherwise.</p>
+<p>An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.</p>
+</li>
+<li><p>要求：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Example 1:</span><br><span class="line">    Input: s = &quot;anagram&quot;, t = &quot;nagaram&quot;</span><br><span class="line">    Output: true</span><br><span class="line">    </span><br><span class="line">Example 2:</span><br><span class="line">    Input: s = &quot;rat&quot;, t = &quot;car&quot;</span><br><span class="line">    Output: false</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>代码：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">isAnagram</span><span class="params">(String s, String t)</span> &#123;</span><br><span class="line">        <span class="type">int</span>[] arr = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">26</span>];</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="type">char</span> temp : s.toCharArray())&#123;</span><br><span class="line">            arr[temp - <span class="string">&#x27;a&#x27;</span>]++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">char</span> temp : t.toCharArray())&#123;</span><br><span class="line">            arr[temp - <span class="string">&#x27;a&#x27;</span>]--;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> temp : arr)&#123;</span><br><span class="line">            <span class="keyword">if</span>(temp != <span class="number">0</span>)&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
 ]]></content>
       <categories>
-        <category>tools</category>
+        <category>算法</category>
       </categories>
       <tags>
-        <tag>mysql</tag>
+        <tag>leetcode</tag>
       </tags>
   </entry>
   <entry>
@@ -1240,59 +1296,73 @@
       </tags>
   </entry>
   <entry>
-    <title>使用数组解决字符串相关问题</title>
-    <url>/2022/08/21/%E4%BD%BF%E7%94%A8%E6%95%B0%E7%BB%84%E8%A7%A3%E5%86%B3%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<p>今天在<a href="https://www.leetcode.cn/">leetcode</a>做字符串计数相关题目时，学习了使用辅助数组来解决问题。</p>
+    <title>Hello World</title>
+    <url>/2022/12/19/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
 <span id="more"></span>
 
-<h4 id="适用情况"><a href="#适用情况" class="headerlink" title="适用情况"></a>适用情况</h4><p>字符串中仅存在小写&#x2F;大写字母，并且涉及字母计数的情景。</p>
-<h4 id="数组构造"><a href="#数组构造" class="headerlink" title="数组构造"></a>数组构造</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span>[] arr = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">26</span>];</span><br></pre></td></tr></table></figure>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
 
-<p><strong>说明：</strong>长度26代表各个字母，并以数组index下标依次表示a, b, c……x, y, z；数组中分别存放每个字母出现的个数，例如：arr[0] &#x3D;&#x3D; 1，表示字母<code>a</code>在字符串中出现了一次。</p>
-<h4 id="相关题目"><a href="#相关题目" class="headerlink" title="相关题目"></a>相关题目</h4><h5 id="题目一"><a href="#题目一" class="headerlink" title="题目一"></a>题目一</h5><ul>
-<li><p>标题：<a href="https://leetcode.cn/problems/first-unique-character-in-a-string/">387. First Unique Character in a String</a></p>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>如何高效学习</title>
+    <url>/2022/08/28/%E5%A6%82%E4%BD%95%E9%AB%98%E6%95%88%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<p>如何用更少的时间获得更高的学习成效，这是令每位学习者都头疼的事情。那么，怎么才能做到高效学习呢，这里总结了一些参考资料。</p>
+<span id="more"></span>
+
+<h3 id="管理你的时间"><a href="#管理你的时间" class="headerlink" title="管理你的时间"></a>管理你的时间</h3><p>每天早上花费5~10分钟，简单地规划下日程安排，不必精确到每分钟，同时也可依实际情况做出调整。</p>
+<ul>
+<li><p>使用工具</p>
+<p>这里我采用了Google keep，因为它界面清爽简洁、多端设备能够实时同步。</p>
+<p><img data-src="https://orangestart.oss-cn-chengdu.aliyuncs.com/myblog/202208281509743.png" alt="image-20220828142201885"></p>
 </li>
-<li><p>描述：</p>
-<p>Given a string s, find the first non-repeating character in it and return its index. If it does not exist, return -1.</p>
+<li><p>基本方法</p>
+<p>划分两个模块，时间安排表、备忘事项。将每天要做的事情以及预计完成时间段记录于时间安排表，把临时遇到的任务或者产生的想法记录在备忘事项中，如有完成时间限制也一同记录。</p>
+<p>每天早晨，看一下日历然后计划今天你该完成什么。之后的一整天里，无论什么时候遇到新情况，简单记在单子上就行了。第二天早晨，你可以依据前天的时间排表完成情况、备忘事项制定新的计划，同时整理备忘事项。</p>
 </li>
-<li><p>要求：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Example 1:</span><br><span class="line">    Input: s = &quot;leetcode&quot;</span><br><span class="line">    Output: 0</span><br><span class="line">    </span><br><span class="line">Example 2:</span><br><span class="line">    Input: s = &quot;loveleetcode&quot;</span><br><span class="line">    Output: 2</span><br><span class="line"></span><br><span class="line">Example 3:</span><br><span class="line">    Input: s = &quot;aabb&quot;</span><br><span class="line">    Output: -1</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>代码：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">firstUniqChar</span><span class="params">(String s)</span> &#123;</span><br><span class="line">        <span class="type">int</span>[] arr = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">26</span>];</span><br><span class="line">        <span class="type">char</span>[] schar = s.toCharArray();</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="type">char</span> temp : schar)&#123;</span><br><span class="line">            arr[temp - <span class="string">&#x27;a&#x27;</span>]++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; schar.length; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(arr[schar[i] - <span class="string">&#x27;a&#x27;</span>] == <span class="number">1</span>)&#123;</span><br><span class="line">                <span class="keyword">return</span> i;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 </ul>
-<h5 id="题目二"><a href="#题目二" class="headerlink" title="题目二"></a>题目二</h5><ul>
-<li><p>标题：<a href="https://leetcode.cn/problems/ransom-note/">383. Ransom Note</a></p>
+<h3 id="向拖延宣战"><a href="#向拖延宣战" class="headerlink" title="向拖延宣战"></a>向拖延宣战</h3><p>前一步介绍了一种简单的时间安排方法来帮助你巧妙计划每一天。那一步很容易人都能花5分钟搞明白要做什么。真正的挑战在于设置好日程后，如何调动积极性真正做完这些事情。</p>
+<ul>
+<li><p>坚持做任务进展日志</p>
+<p>进展日志是一种简单的工具，可以利用现实情况帮你战胜拖沓。一天结束之后，如果所有任务都已完成，就标记上：全部完成。如果有些任务未能完成，标记下来，并写出原因。</p>
 </li>
-<li><p>描述：</p>
-<p>Given two strings ransomNote and magazine, return true if ransomNote can be constructed by using the letters from magazine and false otherwise.</p>
-<p>Each letter in magazine can only be used once in ransomNote.</p>
+<li><p>给“机器”加油</p>
+<p>大多数人都知道这种感觉——脑子感觉反应迟钝，在这种思维状态下几乎不可能督促自己遵守日程表。由此，在长时间工作之后，你需要给身体加油，以保证身体能在最佳状态发挥作用。</p>
+<p>例如：经常喝水、不要漏掉任何一餐。</p>
 </li>
-<li><p>要求：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Example 1:</span><br><span class="line">    Input: ransomNote = &quot;a&quot;, magazine = &quot;b&quot;</span><br><span class="line">    Output: false</span><br><span class="line">    </span><br><span class="line">Example 2:</span><br><span class="line">    Input: ransomNote = &quot;aa&quot;, magazine = &quot;ab&quot;</span><br><span class="line">    Output: false</span><br><span class="line"></span><br><span class="line">Example 3:</span><br><span class="line">    Input: ransomNote = &quot;aa&quot;, magazine = &quot;aab&quot;</span><br><span class="line">    Output: true</span><br></pre></td></tr></table></figure>
+<li><p>把最棘手的任务当作大事</p>
+<p>总有些任务量大，需要耗费巨大精力与时间才能完成的任务。这时你需要将任务分成具体的阶段，并制定相应的计划，避免因任务艰巨而产生拖延心理。</p>
 </li>
-<li><p>代码：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">canConstruct</span><span class="params">(String r, String m)</span> &#123;</span><br><span class="line">        <span class="type">int</span>[] arr = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">26</span>];</span><br><span class="line">        <span class="type">char</span>[] rchar = r.toCharArray();</span><br><span class="line">        <span class="type">char</span>[] mchar = m.toCharArray();</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="type">char</span> temp : mchar)&#123;</span><br><span class="line">            arr[temp - <span class="string">&#x27;a&#x27;</span>]++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">char</span> temp : rchar)&#123;</span><br><span class="line">            <span class="keyword">if</span>(arr[temp - <span class="string">&#x27;a&#x27;</span>] &gt; <span class="number">0</span>)&#123;</span><br><span class="line">                arr[temp - <span class="string">&#x27;a&#x27;</span>]--;</span><br><span class="line">            &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>形成常规</p>
+<p>利用好每天的零碎时间，尽量形成习惯，例如：每天12:30~12:45 记英语单词。</p>
+</li>
 </ul>
-<h5 id="题目三"><a href="#题目三" class="headerlink" title="题目三"></a>题目三</h5><ul>
-<li><p>标题：<a href="https://leetcode.cn/problems/valid-anagram/">242. Valid Anagram</a></p>
+<h3 id="如何选择学习时间、地点和时长"><a href="#如何选择学习时间、地点和时长" class="headerlink" title="如何选择学习时间、地点和时长"></a>如何选择学习时间、地点和时长</h3><p>一天中，什么时间学习效果最好？去哪儿学习？你应不间断地学习多长时间？这些问题的正确答案，将激发你更具效率地学习，使你把更多的事情压进更短的时间内完成。</p>
+<ul>
+<li><p>最好的学习时间</p>
+<p>越早越好。每天的任务应在白天完成，不要总想着拖到晚上来做，虽然夜晚时间比较长，但此时也是最疲倦的时候，学习效率低下，建议将一些简单的任务安排在夜晚时间段。相反，白天完成了任务，晚上就可以好好休息了。</p>
 </li>
-<li><p>描述：</p>
-<p>Given two strings s and t, return true if t is an anagram of s, and false otherwise.</p>
-<p>An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.</p>
+<li><p>学习地点</p>
+<p>将自己“隔离”。学习地点要求僻静，像宿舍或家里这样的地方是学习的禁地，同样图书馆的公共自习室也属此类。远离嘈杂很重要，原因很明显：这种氛围可以使你免于分神。如果在学习期间，你把自己与外部世界切断联系，你就会更有可能完成规定的任务。还有一个附带的好处，注意力进一步集中会让你的学习效率更高。</p>
 </li>
-<li><p>要求：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Example 1:</span><br><span class="line">    Input: s = &quot;anagram&quot;, t = &quot;nagaram&quot;</span><br><span class="line">    Output: true</span><br><span class="line">    </span><br><span class="line">Example 2:</span><br><span class="line">    Input: s = &quot;rat&quot;, t = &quot;car&quot;</span><br><span class="line">    Output: false</span><br></pre></td></tr></table></figure>
+<li><p>学习时长</p>
+<p>中间不休息，一次不要超过一个小时。中间的休息只需要5～10分钟，但这一小段时间很重要，可以让你的大脑得到休息放松。这就意味着需要找一个可以转移几分钟注意力的西，而且必须和休息前进行的事毫无关系。</p>
 </li>
-<li><p>代码：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">isAnagram</span><span class="params">(String s, String t)</span> &#123;</span><br><span class="line">        <span class="type">int</span>[] arr = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">26</span>];</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="type">char</span> temp : s.toCharArray())&#123;</span><br><span class="line">            arr[temp - <span class="string">&#x27;a&#x27;</span>]++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">char</span> temp : t.toCharArray())&#123;</span><br><span class="line">            arr[temp - <span class="string">&#x27;a&#x27;</span>]--;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> temp : arr)&#123;</span><br><span class="line">            <span class="keyword">if</span>(temp != <span class="number">0</span>)&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 </ul>
 ]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
       <tags>
-        <tag>leetcode</tag>
+        <tag>高效学习</tag>
       </tags>
   </entry>
   <entry>
@@ -1380,75 +1450,5 @@
       <tags>
         <tag>vim</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>如何高效学习</title>
-    <url>/2022/08/28/%E5%A6%82%E4%BD%95%E9%AB%98%E6%95%88%E5%AD%A6%E4%B9%A0/</url>
-    <content><![CDATA[<p>如何用更少的时间获得更高的学习成效，这是令每位学习者都头疼的事情。那么，怎么才能做到高效学习呢，这里总结了一些参考资料。</p>
-<span id="more"></span>
-
-<h3 id="管理你的时间"><a href="#管理你的时间" class="headerlink" title="管理你的时间"></a>管理你的时间</h3><p>每天早上花费5~10分钟，简单地规划下日程安排，不必精确到每分钟，同时也可依实际情况做出调整。</p>
-<ul>
-<li><p>使用工具</p>
-<p>这里我采用了Google keep，因为它界面清爽简洁、多端设备能够实时同步。</p>
-<p><img data-src="https://orangestart.oss-cn-chengdu.aliyuncs.com/myblog/202208281509743.png" alt="image-20220828142201885"></p>
-</li>
-<li><p>基本方法</p>
-<p>划分两个模块，时间安排表、备忘事项。将每天要做的事情以及预计完成时间段记录于时间安排表，把临时遇到的任务或者产生的想法记录在备忘事项中，如有完成时间限制也一同记录。</p>
-<p>每天早晨，看一下日历然后计划今天你该完成什么。之后的一整天里，无论什么时候遇到新情况，简单记在单子上就行了。第二天早晨，你可以依据前天的时间排表完成情况、备忘事项制定新的计划，同时整理备忘事项。</p>
-</li>
-</ul>
-<h3 id="向拖延宣战"><a href="#向拖延宣战" class="headerlink" title="向拖延宣战"></a>向拖延宣战</h3><p>前一步介绍了一种简单的时间安排方法来帮助你巧妙计划每一天。那一步很容易人都能花5分钟搞明白要做什么。真正的挑战在于设置好日程后，如何调动积极性真正做完这些事情。</p>
-<ul>
-<li><p>坚持做任务进展日志</p>
-<p>进展日志是一种简单的工具，可以利用现实情况帮你战胜拖沓。一天结束之后，如果所有任务都已完成，就标记上：全部完成。如果有些任务未能完成，标记下来，并写出原因。</p>
-</li>
-<li><p>给“机器”加油</p>
-<p>大多数人都知道这种感觉——脑子感觉反应迟钝，在这种思维状态下几乎不可能督促自己遵守日程表。由此，在长时间工作之后，你需要给身体加油，以保证身体能在最佳状态发挥作用。</p>
-<p>例如：经常喝水、不要漏掉任何一餐。</p>
-</li>
-<li><p>把最棘手的任务当作大事</p>
-<p>总有些任务量大，需要耗费巨大精力与时间才能完成的任务。这时你需要将任务分成具体的阶段，并制定相应的计划，避免因任务艰巨而产生拖延心理。</p>
-</li>
-<li><p>形成常规</p>
-<p>利用好每天的零碎时间，尽量形成习惯，例如：每天12:30~12:45 记英语单词。</p>
-</li>
-</ul>
-<h3 id="如何选择学习时间、地点和时长"><a href="#如何选择学习时间、地点和时长" class="headerlink" title="如何选择学习时间、地点和时长"></a>如何选择学习时间、地点和时长</h3><p>一天中，什么时间学习效果最好？去哪儿学习？你应不间断地学习多长时间？这些问题的正确答案，将激发你更具效率地学习，使你把更多的事情压进更短的时间内完成。</p>
-<ul>
-<li><p>最好的学习时间</p>
-<p>越早越好。每天的任务应在白天完成，不要总想着拖到晚上来做，虽然夜晚时间比较长，但此时也是最疲倦的时候，学习效率低下，建议将一些简单的任务安排在夜晚时间段。相反，白天完成了任务，晚上就可以好好休息了。</p>
-</li>
-<li><p>学习地点</p>
-<p>将自己“隔离”。学习地点要求僻静，像宿舍或家里这样的地方是学习的禁地，同样图书馆的公共自习室也属此类。远离嘈杂很重要，原因很明显：这种氛围可以使你免于分神。如果在学习期间，你把自己与外部世界切断联系，你就会更有可能完成规定的任务。还有一个附带的好处，注意力进一步集中会让你的学习效率更高。</p>
-</li>
-<li><p>学习时长</p>
-<p>中间不休息，一次不要超过一个小时。中间的休息只需要5～10分钟，但这一小段时间很重要，可以让你的大脑得到休息放松。这就意味着需要找一个可以转移几分钟注意力的西，而且必须和休息前进行的事毫无关系。</p>
-</li>
-</ul>
-]]></content>
-      <tags>
-        <tag>高效学习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2022/12/19/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<span id="more"></span>
-
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
   </entry>
 </search>
