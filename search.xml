@@ -1451,4 +1451,82 @@
         <tag>vim</tag>
       </tags>
   </entry>
+  <entry>
+    <title>DbVisualizer</title>
+    <url>/2023/01/14/DbVisualizer/</url>
+    <content><![CDATA[<h4 id="DbVisualizer中文乱码解决"><a href="#DbVisualizer中文乱码解决" class="headerlink" title="DbVisualizer中文乱码解决"></a>DbVisualizer中文乱码解决</h4><span id="more"></span>
+
+<p>Tools–&gt;Tool Properties –&gt;Appearance –&gt;Fonts<br>修改 Font Settings下Grid:值为Dialog<br>修改 SQL Editor&#x2F;Text Editor值为Monospaced</p>
+]]></content>
+      <categories>
+        <category>tools</category>
+      </categories>
+      <tags>
+        <tag>db</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>oracle数据库日常使用</title>
+    <url>/2023/01/14/oracle%E6%95%B0%E6%8D%AE%E5%BA%93%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<p>Oracle数据库，也称为Oracle RDBMS，简称Oracle。它是甲骨文公司关系数据库管理系统的一款，也是在数据库领域始终处于领先地位的产品。</p>
+<span id="more"></span>
+
+<h3 id="Oracle-DB"><a href="#Oracle-DB" class="headerlink" title="Oracle DB"></a>Oracle DB</h3><h4 id="启动本地Oracle-DB"><a href="#启动本地Oracle-DB" class="headerlink" title="启动本地Oracle DB"></a>启动本地Oracle DB</h4><blockquote>
+<p>必须启动的服务项：OracleServiceXE、OracleXETNSListener</p>
+</blockquote>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment">##开启服务</span></span><br><span class="line">net <span class="built_in">start</span> OracleServiceXE</span><br><span class="line"><span class="comment">#net start OracleXETNSListener</span></span><br><span class="line"><span class="comment">##关闭服务</span></span><br><span class="line"><span class="comment">#net stop OracleXETNSListener</span></span><br><span class="line">net stop OracleServiceXE</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>以管理员身份启动cmd&#x2F;powershell</p>
+<ul>
+<li>cmd</li>
+</ul>
+<p><kbd>win</kbd>+<kbd>R</kbd> 输入cmd</p>
+<p><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Enter</kbd></p>
+<ul>
+<li>powershell</li>
+</ul>
+</li>
+</ul>
+<p>​		<kbd>win</kbd>+<kbd>X</kbd></p>
+<p>​		鼠标点击终端（管理员）</p>
+<h4 id="权限授予"><a href="#权限授予" class="headerlink" title="权限授予"></a>权限授予</h4> <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">grant</span> <span class="keyword">select</span> <span class="keyword">on</span> curUser.tableName <span class="keyword">to</span> otherUser;</span><br></pre></td></tr></table></figure>
+
+<h4 id="创建同义词"><a href="#创建同义词" class="headerlink" title="创建同义词"></a>创建同义词</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">create</span> synonym NTM_TAR_INFO <span class="keyword">for</span> UPSR.NTM_TAR_INFO;</span><br></pre></td></tr></table></figure>
+
+<h4 id="oracle添加注释"><a href="#oracle添加注释" class="headerlink" title="oracle添加注释"></a>oracle添加注释</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">comment <span class="keyword">on</span> tableName <span class="keyword">is</span> <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">comment <span class="keyword">on</span> <span class="keyword">column</span> tableName.column <span class="keyword">is</span> <span class="string">&#x27;&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">comment <span class="keyword">on</span> <span class="keyword">column</span> o_ctssb_FS_GL_BALANCE.branch_no  <span class="keyword">is</span> <span class="string">&#x27;机构代码&#x27;</span></span><br><span class="line">comment <span class="keyword">on</span> <span class="keyword">column</span> o_ctssb_FS_GL_BALANCE.ccy_no     <span class="keyword">is</span> <span class="string">&#x27;币种&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="to-date-参考"><a href="#to-date-参考" class="headerlink" title="to_date(参考)"></a>to_date(参考)</h4><p><a href="https://www.jb51.net/article/219379.htm#_label1">https://www.jb51.net/article/219379.htm#_label1</a></p>
+<p><a href="https://www.cnblogs.com/javaxubo/p/16096502.html">https://www.cnblogs.com/javaxubo/p/16096502.html</a></p>
+<h4 id="日期加上一天"><a href="#日期加上一天" class="headerlink" title="日期加上一天"></a>日期加上一天</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> to_date(<span class="string">&#x27;20220831&#x27;</span>, <span class="string">&#x27;YYYYMMDD&#x27;</span>)<span class="operator">+</span><span class="number">1</span> <span class="keyword">from</span> dual</span><br></pre></td></tr></table></figure>
+
+<h4 id="向上-x2F-向下取整"><a href="#向上-x2F-向下取整" class="headerlink" title="向上&#x2F;向下取整"></a>向上&#x2F;向下取整</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="built_in">floor</span>(<span class="number">2.33</span>) <span class="keyword">as</span> 向下取整 <span class="keyword">from</span> dual</span><br><span class="line"><span class="keyword">select</span> <span class="built_in">ceil</span>(<span class="number">3.33</span>) <span class="keyword">as</span> 向上取整 <span class="keyword">from</span> dual</span><br></pre></td></tr></table></figure>
+
+<h4 id="日期月份加减"><a href="#日期月份加减" class="headerlink" title="日期月份加减"></a>日期月份加减</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">#<span class="keyword">add</span> <span class="keyword">one</span> <span class="keyword">month</span></span><br><span class="line"><span class="keyword">select</span> add_months(to_date(<span class="string">&#x27;20220331&#x27;</span>, <span class="string">&#x27;YYYYMMDD&#x27;</span>), <span class="number">1</span>) <span class="keyword">from</span> dual</span><br><span class="line">#reduce <span class="keyword">one</span> <span class="keyword">month</span></span><br><span class="line"><span class="keyword">select</span> add_months(to_date(<span class="string">&#x27;20220331&#x27;</span>, <span class="string">&#x27;YYYYMMDD&#x27;</span>), <span class="number">-1</span>) <span class="keyword">from</span> dual</span><br></pre></td></tr></table></figure>
+
+<h4 id="去年今日"><a href="#去年今日" class="headerlink" title="去年今日"></a>去年今日</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> add_months(sysdate, <span class="number">-12</span>) <span class="keyword">from</span> dual;</span><br></pre></td></tr></table></figure>
+
+<h4 id="日期-x2F-字符串转换"><a href="#日期-x2F-字符串转换" class="headerlink" title="日期&#x2F;字符串转换"></a>日期&#x2F;字符串转换</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> to_date(<span class="string">&#x27;20221114&#x27;</span>, <span class="string">&#x27;YYYYMMDD&#x27;</span>) <span class="keyword">from</span> dual;</span><br><span class="line"><span class="keyword">select</span> to_char(sysdate, <span class="string">&#x27;YYYYMMDD&#x27;</span>) <span class="keyword">from</span> dual;</span><br></pre></td></tr></table></figure>
+
+<h4 id="使用现有表创建新表（可以用于临时备份数据）"><a href="#使用现有表创建新表（可以用于临时备份数据）" class="headerlink" title="使用现有表创建新表（可以用于临时备份数据）"></a>使用现有表创建新表（可以用于临时备份数据）</h4> <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> newtableName <span class="keyword">as</span> <span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> oldtablename;</span><br></pre></td></tr></table></figure>
+
+<h4 id="修改字段类型、长度"><a href="#修改字段类型、长度" class="headerlink" title="修改字段类型、长度"></a>修改字段类型、长度</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> tableName modify colName varchar2(<span class="number">12</span>);</span><br></pre></td></tr></table></figure>
+
+<h4 id="oracle数据库备份与恢复"><a href="#oracle数据库备份与恢复" class="headerlink" title="oracle数据库备份与恢复"></a>oracle数据库备份与恢复</h4><ul>
+<li><p>导出</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">exp scott/123456 file=d:\scott.dmp  owner=scott</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>导入</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">imp scott/123456 file=d:\scott.dmp</span><br></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
+      <categories>
+        <category>oracle</category>
+      </categories>
+      <tags>
+        <tag>db</tag>
+      </tags>
+  </entry>
 </search>
