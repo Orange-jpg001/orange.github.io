@@ -1022,7 +1022,7 @@
 <h4 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h4><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">| 表头一 | 表头二 | 表头三 |</span><br><span class="line">| ---- | ---- | ---- |   (----：个数没有规定，使用4个也可以。)</span><br><span class="line">| 内容一 | 内容二 | 内容三 |</span><br></pre></td></tr></table></figure>
 
 <p>说明：对齐方式以第二行代码规定，左对齐（默认）：<code>:----</code>，右对齐：<code>----:</code>，居中对齐：<code>:----:</code>，最后块级元素（代码区块、引用区块）不能插入表格中。</p>
-<h4 id="任务列表"><a href="#任务列表" class="headerlink" title="任务列表"></a>任务列表</h4><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="bullet">-</span> [] 未勾选</span><br><span class="line"><span class="bullet">-</span> [x] 已勾选</span><br></pre></td></tr></table></figure>
+<h4 id="任务列表"><a href="#任务列表" class="headerlink" title="任务列表"></a>任务列表</h4><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="bullet">-</span> [ ] 未勾选</span><br><span class="line"><span class="bullet">-</span> [x] 已勾选</span><br></pre></td></tr></table></figure>
 
 <h4 id="围栏代码块"><a href="#围栏代码块" class="headerlink" title="围栏代码块"></a>围栏代码块</h4><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="code">```java</span></span><br><span class="line"><span class="code">public void main(String[] args)&#123;</span></span><br><span class="line"><span class="code">	System.out.println(&quot;hello, world&quot;);</span></span><br><span class="line"><span class="code">&#125;</span></span><br></pre></td></tr></table></figure>
 
