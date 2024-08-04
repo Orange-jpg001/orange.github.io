@@ -1174,35 +1174,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Java实现发送邮件功能</title>
-    <url>/2022/08/28/Java%E5%AE%9E%E7%8E%B0%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6%E5%8A%9F%E8%83%BD/</url>
-    <content><![CDATA[<p>有时需要发送邮箱验证码，用于账户注册、登录、密码重置等功能操作。</p>
-<span id="more"></span>
-
-<h4 id="Java实现发送邮件"><a href="#Java实现发送邮件" class="headerlink" title="Java实现发送邮件"></a>Java实现发送邮件</h4><ul>
-<li><p>pom文件中导入依赖</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.sun.mail<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>javax.mail<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.5.6<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-<ul>
-<li><p>获取发送邮箱权限码</p>
-<p><img data-src="https://orangestart.oss-cn-chengdu.aliyuncs.com/myblog/202208281756594.png" alt="image-20220828175530544"></p>
-</li>
-<li><p>具体实现</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.orange.emialUtil;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Properties;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.mail.Authenticator;</span><br><span class="line"><span class="keyword">import</span> javax.mail.Message;</span><br><span class="line"><span class="keyword">import</span> javax.mail.MessagingException;</span><br><span class="line"><span class="keyword">import</span> javax.mail.PasswordAuthentication;</span><br><span class="line"><span class="keyword">import</span> javax.mail.Session;</span><br><span class="line"><span class="keyword">import</span> javax.mail.Transport;</span><br><span class="line"><span class="keyword">import</span> javax.mail.internet.InternetAddress;</span><br><span class="line"><span class="keyword">import</span> javax.mail.internet.MimeMessage;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * send email</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">App</span> &#123;</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;start send email...&quot;</span>);</span><br><span class="line">    <span class="type">String</span> <span class="variable">to</span> <span class="operator">=</span> <span class="string">&quot;orangestart@yeah.net&quot;</span>;</span><br><span class="line">    <span class="type">int</span> <span class="variable">code</span> <span class="operator">=</span> getNum();</span><br><span class="line">    emailUtils(to, code);</span><br><span class="line">    System.out.println(<span class="string">&quot;success!&quot;</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * </span></span><br><span class="line"><span class="comment">   * <span class="doctag">@Description</span></span></span><br><span class="line"><span class="comment">   * <span class="doctag">@author</span> orange</span></span><br><span class="line"><span class="comment">   * <span class="doctag">@date</span> 2021年12月23日下午8:34:51</span></span><br><span class="line"><span class="comment">   * <span class="doctag">@param</span> to   邮件接受方</span></span><br><span class="line"><span class="comment">   * <span class="doctag">@param</span> code 验证码</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">emailUtils</span><span class="params">(String to, <span class="type">int</span> code)</span> &#123;</span><br><span class="line">    <span class="comment">// 发件人电子邮箱</span></span><br><span class="line">    <span class="keyword">final</span> <span class="type">String</span> <span class="variable">from</span> <span class="operator">=</span> <span class="string">&quot;xxx@qq.com&quot;</span>;</span><br><span class="line">    <span class="comment">// 指定发送邮件的主机为 smtp.qq.com, QQ 邮件服务器</span></span><br><span class="line">    <span class="type">String</span> <span class="variable">host</span> <span class="operator">=</span> <span class="string">&quot;smtp.qq.com&quot;</span>;</span><br><span class="line">    <span class="comment">// qq邮箱授权码，要用自己的，每个邮箱都不一样</span></span><br><span class="line">    <span class="keyword">final</span> <span class="type">String</span> <span class="variable">authorizationCode</span> <span class="operator">=</span> <span class="string">&quot;xxx&quot;</span>;</span><br><span class="line">    <span class="comment">// 获取系统属性</span></span><br><span class="line">    <span class="type">Properties</span> <span class="variable">properties</span> <span class="operator">=</span> System.getProperties();</span><br><span class="line">    <span class="comment">// 设置邮件服务器</span></span><br><span class="line">    properties.setProperty(<span class="string">&quot;mail.smtp.host&quot;</span>, host);</span><br><span class="line">    properties.put(<span class="string">&quot;mail.smtp.auth&quot;</span>, <span class="string">&quot;true&quot;</span>);</span><br><span class="line">    <span class="comment">// 获取默认session对象</span></span><br><span class="line">    <span class="type">Session</span> <span class="variable">session</span> <span class="operator">=</span> Session.getDefaultInstance(properties, <span class="keyword">new</span> <span class="title class_">Authenticator</span>() &#123;</span><br><span class="line">      <span class="keyword">public</span> PasswordAuthentication <span class="title function_">getPasswordAuthentication</span><span class="params">()</span> &#123;</span><br><span class="line">         <span class="comment">// 发件人邮件用户名、授权码</span></span><br><span class="line">         <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">PasswordAuthentication</span>(from, authorizationCode);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="comment">// 创建默认的 MimeMessage 对象</span></span><br><span class="line">        <span class="type">MimeMessage</span> <span class="variable">message</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">MimeMessage</span>(session);</span><br><span class="line">        <span class="comment">// Set From: 头部头字段</span></span><br><span class="line">        message.setFrom(<span class="keyword">new</span> <span class="title class_">InternetAddress</span>(from));</span><br><span class="line">        <span class="comment">// Set To: 头部头字段</span></span><br><span class="line">        message.addRecipient(Message.RecipientType.TO, <span class="keyword">new</span> <span class="title class_">InternetAddress</span>(to));</span><br><span class="line">        <span class="comment">// Set Subject: 标题</span></span><br><span class="line">        message.setSubject(<span class="string">&quot;【橙子学苑】&quot;</span>);</span><br><span class="line">        <span class="comment">// 设置消息体 code:【验证码】</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">messBody</span> <span class="operator">=</span> <span class="string">&quot;验证码：&quot;</span> + code + <span class="string">&quot;，您正在进行身份验证，5分钟内有效。&quot;</span>;</span><br><span class="line">        message.setText(messBody);</span><br><span class="line">        <span class="comment">// 发送消息</span></span><br><span class="line">        Transport.send(message);</span><br><span class="line">        System.out.println(<span class="string">&quot;Sent Email successfully....&quot;</span>);</span><br><span class="line">      &#125; <span class="keyword">catch</span> (MessagingException mex) &#123;</span><br><span class="line">        mex.printStackTrace();</span><br><span class="line">      &#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// generate a random number</span></span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">getNum</span><span class="params">()</span> &#123;</span><br><span class="line">	<span class="keyword">return</span> (<span class="type">int</span>) (Math.random() * <span class="number">10000</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>测试</p>
-<img data-src="https://orangestart.oss-cn-chengdu.aliyuncs.com/myblog/202208281759727.png" alt="image-20220828175952562"/></li>
-</ul>
-<img data-src="https://orangestart.oss-cn-chengdu.aliyuncs.com/myblog/202208281802189.png" style="zoom:88%;" />
-]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>tools</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>运算符优先级</title>
     <url>/2022/08/25/%E8%BF%90%E7%AE%97%E7%AC%A6%E4%BC%98%E5%85%88%E7%BA%A7/</url>
     <content><![CDATA[<p>计算机编程语言中有多种运算符，用于执行代码运算，本文总结了常见运算符的优先级、结合性。</p>
@@ -1296,76 +1267,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2022/12/19/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<span id="more"></span>
-
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>如何高效学习</title>
-    <url>/2022/08/28/%E5%A6%82%E4%BD%95%E9%AB%98%E6%95%88%E5%AD%A6%E4%B9%A0/</url>
-    <content><![CDATA[<p>如何用更少的时间获得更高的学习成效，这是令每位学习者都头疼的事情。那么，怎么才能做到高效学习呢，这里总结了一些参考资料。</p>
-<span id="more"></span>
-
-<h3 id="管理你的时间"><a href="#管理你的时间" class="headerlink" title="管理你的时间"></a>管理你的时间</h3><p>每天早上花费5~10分钟，简单地规划下日程安排，不必精确到每分钟，同时也可依实际情况做出调整。</p>
-<ul>
-<li><p>使用工具</p>
-<p>这里我采用了Google keep，因为它界面清爽简洁、多端设备能够实时同步。</p>
-<p><img data-src="https://orangestart.oss-cn-chengdu.aliyuncs.com/myblog/202208281509743.png" alt="image-20220828142201885"></p>
-</li>
-<li><p>基本方法</p>
-<p>划分两个模块，时间安排表、备忘事项。将每天要做的事情以及预计完成时间段记录于时间安排表，把临时遇到的任务或者产生的想法记录在备忘事项中，如有完成时间限制也一同记录。</p>
-<p>每天早晨，看一下日历然后计划今天你该完成什么。之后的一整天里，无论什么时候遇到新情况，简单记在单子上就行了。第二天早晨，你可以依据前天的时间排表完成情况、备忘事项制定新的计划，同时整理备忘事项。</p>
-</li>
-</ul>
-<h3 id="向拖延宣战"><a href="#向拖延宣战" class="headerlink" title="向拖延宣战"></a>向拖延宣战</h3><p>前一步介绍了一种简单的时间安排方法来帮助你巧妙计划每一天。那一步很容易人都能花5分钟搞明白要做什么。真正的挑战在于设置好日程后，如何调动积极性真正做完这些事情。</p>
-<ul>
-<li><p>坚持做任务进展日志</p>
-<p>进展日志是一种简单的工具，可以利用现实情况帮你战胜拖沓。一天结束之后，如果所有任务都已完成，就标记上：全部完成。如果有些任务未能完成，标记下来，并写出原因。</p>
-</li>
-<li><p>给“机器”加油</p>
-<p>大多数人都知道这种感觉——脑子感觉反应迟钝，在这种思维状态下几乎不可能督促自己遵守日程表。由此，在长时间工作之后，你需要给身体加油，以保证身体能在最佳状态发挥作用。</p>
-<p>例如：经常喝水、不要漏掉任何一餐。</p>
-</li>
-<li><p>把最棘手的任务当作大事</p>
-<p>总有些任务量大，需要耗费巨大精力与时间才能完成的任务。这时你需要将任务分成具体的阶段，并制定相应的计划，避免因任务艰巨而产生拖延心理。</p>
-</li>
-<li><p>形成常规</p>
-<p>利用好每天的零碎时间，尽量形成习惯，例如：每天12:30~12:45 记英语单词。</p>
-</li>
-</ul>
-<h3 id="如何选择学习时间、地点和时长"><a href="#如何选择学习时间、地点和时长" class="headerlink" title="如何选择学习时间、地点和时长"></a>如何选择学习时间、地点和时长</h3><p>一天中，什么时间学习效果最好？去哪儿学习？你应不间断地学习多长时间？这些问题的正确答案，将激发你更具效率地学习，使你把更多的事情压进更短的时间内完成。</p>
-<ul>
-<li><p>最好的学习时间</p>
-<p>越早越好。每天的任务应在白天完成，不要总想着拖到晚上来做，虽然夜晚时间比较长，但此时也是最疲倦的时候，学习效率低下，建议将一些简单的任务安排在夜晚时间段。相反，白天完成了任务，晚上就可以好好休息了。</p>
-</li>
-<li><p>学习地点</p>
-<p>将自己“隔离”。学习地点要求僻静，像宿舍或家里这样的地方是学习的禁地，同样图书馆的公共自习室也属此类。远离嘈杂很重要，原因很明显：这种氛围可以使你免于分神。如果在学习期间，你把自己与外部世界切断联系，你就会更有可能完成规定的任务。还有一个附带的好处，注意力进一步集中会让你的学习效率更高。</p>
-</li>
-<li><p>学习时长</p>
-<p>中间不休息，一次不要超过一个小时。中间的休息只需要5～10分钟，但这一小段时间很重要，可以让你的大脑得到休息放松。这就意味着需要找一个可以转移几分钟注意力的西，而且必须和休息前进行的事毫无关系。</p>
-</li>
-</ul>
-]]></content>
-      <tags>
-        <tag>高效学习</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>vim入门</title>
     <url>/2022/12/23/vim%E5%85%A5%E9%97%A8/</url>
     <content><![CDATA[<p>vim是Linux内置的一款文本编辑器，提供纯键盘编辑输入方式，脱离鼠标的同时又不输优雅。</p>
@@ -1392,7 +1293,7 @@
 <p>​	<kbd>Ctrl</kbd>+<kbd>b</kbd>：向上滚动一屏</p>
 <p>​	<kbd>Ctrl</kbd>+<kbd>f</kbd>：向下滚动一屏</p>
 <h5 id="移动到行首或行尾"><a href="#移动到行首或行尾" class="headerlink" title="移动到行首或行尾"></a>移动到行首或行尾</h5><p>​	<kbd>0</kbd>：快速移动到光标所在行的行首</p>
-<p>​	<kbd>$</kbd>：快速移动到光标所在行</p>
+<p>​	<kbd>$</kbd>：快速移动到光标所在行尾</p>
 <p>​	<kbd>^</kbd>：快速移动到光标所在行<b>第一个非空字符</b></p>
 <h5 id="其他移动光标的操作"><a href="#其他移动光标的操作" class="headerlink" title="其他移动光标的操作"></a>其他移动光标的操作</h5><p>​	<kbd>G</kbd>：移动到文件最后行行首</p>
 <p>​	<kbd>2</kbd>+<kbd>G</kbd>：移动到指定行行首</p>
@@ -1403,8 +1304,8 @@
 <p>​	<kbd>X</kbd>：删除光标前一个字符</p>
 <p>​	<kbd>dd</kbd>：删除光标所在行</p>
 <p>​	<kbd>10</kbd>+<kbd>dd</kbd>：向下删除10行</p>
-<p>​	<kbd>d0</kbd>：删除光标前所有内容</p>
-<p>​	<kbd>D</kbd> ：删除光标后所有内容</p>
+<p>​	<kbd>d0</kbd>：删除光标(所在行)前所有内容</p>
+<p>​	<kbd>D</kbd> ：删除光标(所在行)后所有内容</p>
 <p>​	<kbd>daw</kbd>：删除光标所在单词</p>
 <h5 id="可视模式"><a href="#可视模式" class="headerlink" title="可视模式"></a>可视模式</h5><p>​	<kbd>v</kbd>：按字符移动光标选择内容</p>
 <p>​	<kbd>V</kbd>：按行上下移动选择内容</p>
@@ -1452,20 +1353,6 @@
       </tags>
   </entry>
   <entry>
-    <title>DbVisualizer</title>
-    <url>/2023/01/14/DbVisualizer/</url>
-    <content><![CDATA[<h4 id="DbVisualizer中文乱码解决"><a href="#DbVisualizer中文乱码解决" class="headerlink" title="DbVisualizer中文乱码解决"></a>DbVisualizer中文乱码解决</h4><span id="more"></span>
-
-<p>Tools–&gt;Tool Properties –&gt;Appearance –&gt;Fonts<br>修改 Font Settings下Grid:值为Dialog<br>修改 SQL Editor&#x2F;Text Editor值为Monospaced</p>
-]]></content>
-      <categories>
-        <category>tools</category>
-      </categories>
-      <tags>
-        <tag>db</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>oracle数据库日常使用</title>
     <url>/2023/01/14/oracle%E6%95%B0%E6%8D%AE%E5%BA%93%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8/</url>
     <content><![CDATA[<p>Oracle数据库，也称为Oracle RDBMS，简称Oracle。它是甲骨文公司关系数据库管理系统的一款，也是在数据库领域始终处于领先地位的产品。</p>
@@ -1474,7 +1361,7 @@
 <h3 id="Oracle-DB"><a href="#Oracle-DB" class="headerlink" title="Oracle DB"></a>Oracle DB</h3><h4 id="启动本地Oracle-DB"><a href="#启动本地Oracle-DB" class="headerlink" title="启动本地Oracle DB"></a>启动本地Oracle DB</h4><blockquote>
 <p>必须启动的服务项：OracleServiceXE、OracleXETNSListener</p>
 </blockquote>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment">##开启服务</span></span><br><span class="line">net <span class="built_in">start</span> OracleServiceXE</span><br><span class="line"><span class="comment">#net start OracleXETNSListener</span></span><br><span class="line"><span class="comment">##关闭服务</span></span><br><span class="line"><span class="comment">#net stop OracleXETNSListener</span></span><br><span class="line">net stop OracleServiceXE</span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment">##开启服务</span></span><br><span class="line">net <span class="built_in">start</span> OracleServiceXE</span><br><span class="line">net <span class="built_in">start</span> OracleXETNSListener</span><br><span class="line"><span class="comment">##关闭服务</span></span><br><span class="line">net stop OracleXETNSListener</span><br><span class="line">net stop OracleServiceXE</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li><p>以管理员身份启动cmd&#x2F;powershell</p>
@@ -1528,5 +1415,120 @@
       <tags>
         <tag>db</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Java实现发送邮件功能</title>
+    <url>/2022/08/28/Java%E5%AE%9E%E7%8E%B0%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6%E5%8A%9F%E8%83%BD/</url>
+    <content><![CDATA[<p>有时需要发送邮箱验证码，用于账户注册、登录、密码重置等功能操作。</p>
+<span id="more"></span>
+
+<h4 id="Java实现发送邮件"><a href="#Java实现发送邮件" class="headerlink" title="Java实现发送邮件"></a>Java实现发送邮件</h4><ul>
+<li><p>pom文件中导入依赖</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.sun.mail<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>javax.mail<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.5.6<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<ul>
+<li><p>获取发送邮箱权限码</p>
+<p><img data-src="https://orangestart.oss-cn-chengdu.aliyuncs.com/myblog/202208281756594.png" alt="image-20220828175530544"></p>
+</li>
+<li><p>具体实现</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.orange.emialUtil;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Properties;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.mail.Authenticator;</span><br><span class="line"><span class="keyword">import</span> javax.mail.Message;</span><br><span class="line"><span class="keyword">import</span> javax.mail.MessagingException;</span><br><span class="line"><span class="keyword">import</span> javax.mail.PasswordAuthentication;</span><br><span class="line"><span class="keyword">import</span> javax.mail.Session;</span><br><span class="line"><span class="keyword">import</span> javax.mail.Transport;</span><br><span class="line"><span class="keyword">import</span> javax.mail.internet.InternetAddress;</span><br><span class="line"><span class="keyword">import</span> javax.mail.internet.MimeMessage;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * send email</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">App</span> &#123;</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;start send email...&quot;</span>);</span><br><span class="line">    <span class="type">String</span> <span class="variable">to</span> <span class="operator">=</span> <span class="string">&quot;orangestart@yeah.net&quot;</span>;</span><br><span class="line">    <span class="type">int</span> <span class="variable">code</span> <span class="operator">=</span> getNum();</span><br><span class="line">    emailUtils(to, code);</span><br><span class="line">    System.out.println(<span class="string">&quot;success!&quot;</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * </span></span><br><span class="line"><span class="comment">   * <span class="doctag">@Description</span></span></span><br><span class="line"><span class="comment">   * <span class="doctag">@author</span> orange</span></span><br><span class="line"><span class="comment">   * <span class="doctag">@date</span> 2021年12月23日下午8:34:51</span></span><br><span class="line"><span class="comment">   * <span class="doctag">@param</span> to   邮件接受方</span></span><br><span class="line"><span class="comment">   * <span class="doctag">@param</span> code 验证码</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">emailUtils</span><span class="params">(String to, <span class="type">int</span> code)</span> &#123;</span><br><span class="line">    <span class="comment">// 发件人电子邮箱</span></span><br><span class="line">    <span class="keyword">final</span> <span class="type">String</span> <span class="variable">from</span> <span class="operator">=</span> <span class="string">&quot;xxx@qq.com&quot;</span>;</span><br><span class="line">    <span class="comment">// 指定发送邮件的主机为 smtp.qq.com, QQ 邮件服务器</span></span><br><span class="line">    <span class="type">String</span> <span class="variable">host</span> <span class="operator">=</span> <span class="string">&quot;smtp.qq.com&quot;</span>;</span><br><span class="line">    <span class="comment">// qq邮箱授权码，要用自己的，每个邮箱都不一样</span></span><br><span class="line">    <span class="keyword">final</span> <span class="type">String</span> <span class="variable">authorizationCode</span> <span class="operator">=</span> <span class="string">&quot;xxx&quot;</span>;</span><br><span class="line">    <span class="comment">// 获取系统属性</span></span><br><span class="line">    <span class="type">Properties</span> <span class="variable">properties</span> <span class="operator">=</span> System.getProperties();</span><br><span class="line">    <span class="comment">// 设置邮件服务器</span></span><br><span class="line">    properties.setProperty(<span class="string">&quot;mail.smtp.host&quot;</span>, host);</span><br><span class="line">    properties.put(<span class="string">&quot;mail.smtp.auth&quot;</span>, <span class="string">&quot;true&quot;</span>);</span><br><span class="line">    <span class="comment">// 获取默认session对象</span></span><br><span class="line">    <span class="type">Session</span> <span class="variable">session</span> <span class="operator">=</span> Session.getDefaultInstance(properties, <span class="keyword">new</span> <span class="title class_">Authenticator</span>() &#123;</span><br><span class="line">      <span class="keyword">public</span> PasswordAuthentication <span class="title function_">getPasswordAuthentication</span><span class="params">()</span> &#123;</span><br><span class="line">         <span class="comment">// 发件人邮件用户名、授权码</span></span><br><span class="line">         <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">PasswordAuthentication</span>(from, authorizationCode);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="comment">// 创建默认的 MimeMessage 对象</span></span><br><span class="line">        <span class="type">MimeMessage</span> <span class="variable">message</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">MimeMessage</span>(session);</span><br><span class="line">        <span class="comment">// Set From: 头部头字段</span></span><br><span class="line">        message.setFrom(<span class="keyword">new</span> <span class="title class_">InternetAddress</span>(from));</span><br><span class="line">        <span class="comment">// Set To: 头部头字段</span></span><br><span class="line">        message.addRecipient(Message.RecipientType.TO, <span class="keyword">new</span> <span class="title class_">InternetAddress</span>(to));</span><br><span class="line">        <span class="comment">// Set Subject: 标题</span></span><br><span class="line">        message.setSubject(<span class="string">&quot;【橙子学苑】&quot;</span>);</span><br><span class="line">        <span class="comment">// 设置消息体 code:【验证码】</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">messBody</span> <span class="operator">=</span> <span class="string">&quot;验证码：&quot;</span> + code + <span class="string">&quot;，您正在进行身份验证，5分钟内有效。&quot;</span>;</span><br><span class="line">        message.setText(messBody);</span><br><span class="line">        <span class="comment">// 发送消息</span></span><br><span class="line">        Transport.send(message);</span><br><span class="line">        System.out.println(<span class="string">&quot;Sent Email successfully....&quot;</span>);</span><br><span class="line">      &#125; <span class="keyword">catch</span> (MessagingException mex) &#123;</span><br><span class="line">        mex.printStackTrace();</span><br><span class="line">      &#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// generate a random number</span></span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">getNum</span><span class="params">()</span> &#123;</span><br><span class="line">	<span class="keyword">return</span> (<span class="type">int</span>) (Math.random() * <span class="number">10000</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>测试</p>
+<img data-src="https://orangestart.oss-cn-chengdu.aliyuncs.com/myblog/202208281759727.png" alt="image-20220828175952562"/></li>
+</ul>
+<img data-src="https://orangestart.oss-cn-chengdu.aliyuncs.com/myblog/202208281802189.png" style="zoom:88%;" />
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>tools</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>DbVisualizer</title>
+    <url>/2023/01/14/DbVisualizer/</url>
+    <content><![CDATA[<p>DbVisualizer中文乱码解决</p>
+<span id="more"></span>
+
+<p>Tools–&gt;Tool Properties –&gt;Appearance –&gt;Fonts<br>修改 Font Settings下Grid:值为Dialog<br>修改 SQL Editor&#x2F;Text Editor值为Monospaced</p>
+]]></content>
+      <categories>
+        <category>tools</category>
+      </categories>
+      <tags>
+        <tag>db</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>blog规范</title>
+    <url>/2024/08/05/blog%E8%A7%84%E8%8C%83/</url>
+    <content><![CDATA[<p><a href="https://orangestart.github.io/">blog</a>基于<a href="https://hexo.io/zh-cn/docs/">Hexo</a>+<a href="https://theme-next.iissnan.com/getting-started.html">next</a>搭建，部署于<a href="https://docs.github.com/zh/enterprise-server@3.8/pages/quickstart">GitHub Pages</a>，采用<a href="https://www.typora.net/">Typora</a>+<a href="https://markdown.p2hp.com/index.html">Markdown</a>编写，使用<a href="https://www.aliyun.com/">阿里云</a>图床。</p>
+<span id="more"></span>
+
+<h4 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h4><ol>
+<li><p>blog使用二级标题，主体内容使用四、五级标题分级，<strong>一般使用二级标题、四级标题即可</strong>。</p>
+</li>
+<li><p>博客标题应采用<strong>XXX的运用&#x2F;实现</strong>（偏正短语），例如：基于Java背包算法的实现。</p>
+<p>注意：字数不宜超过15字，英文单词视为一字。</p>
+</li>
+</ol>
+<h4 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h4><p>​	一级标签表示内容<strong>分类</strong>，二级标签表示内容<strong>关键词</strong>，每级标签数量为<strong>2、3</strong>个。</p>
+<h4 id="插图"><a href="#插图" class="headerlink" title="插图"></a>插图</h4><ol>
+<li><p>本地必须进行<strong>图片压缩</strong>，以节省服务器空间。</p>
+</li>
+<li><p>命名格式为“<strong>所属标题_插图内容关键词</strong>”，例如：插图_压缩软件使用说明。</p>
+</li>
+<li><p>每张插图需给出明确的<strong>上下文说明</strong>，数量要与文章篇幅相符，<strong>非必要不贴图</strong>。</p>
+</li>
+<li><p>插图应按<strong>67%<strong>大小进行缩放，长宽比为</strong>16 : 9</strong>。</p>
+</li>
+</ol>
+<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><p>​	代码需<strong>完整且能够编译运行</strong>，使用注释说明，良好代码格式，如若涉及具体算法，需说明其<strong>时间复杂度</strong>与<strong>空间复杂度</strong>。</p>
+<h4 id="发布"><a href="#发布" class="headerlink" title="发布"></a>发布</h4><ol>
+<li><p>时间安排，计划以周为单位，每周发布一篇博客。</p>
+</li>
+<li><p>内容为某要点的说明，例如：Mysql窗口函数的使用。</p>
+</li>
+<li><p>博客发布详见<a href="https://orangestart.github.io/2022/12/19/hello-world/#more">教程</a>。</p>
+</li>
+</ol>
+<h4 id="备份"><a href="#备份" class="headerlink" title="备份"></a>备份</h4><blockquote>
+<p>成功发布博客后，分别及时在<a href="https://gitee.com/">Gitee</a>、<a href="https://pan.baidu.com/disk/main#/index?category=all">百度云</a>、<a href="https://www.lanzou.com/">蓝奏云</a>平台进行数据备份。</p>
+</blockquote>
+<ol>
+<li><p>Gitee采用git<a href="https://www.cnblogs.com/yiven/p/8465054.html">管理</a>。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git add .    //添加所有更新文件</span><br><span class="line">git commit -m &quot;注释说明&quot;     //添加更新说明</span><br><span class="line">git push origin master      //执行更新操作</span><br><span class="line">//从仓库下载blog</span><br><span class="line">git clone https://gitee.com/.../....git </span><br></pre></td></tr></table></figure>
+</li>
+<li><p>百度云、蓝奏云使用传统的文件上传方式。</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>tools</category>
+      </categories>
+      <tags>
+        <tag>blog规范</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2022/12/19/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<span id="more"></span>
+
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
   </entry>
 </search>
